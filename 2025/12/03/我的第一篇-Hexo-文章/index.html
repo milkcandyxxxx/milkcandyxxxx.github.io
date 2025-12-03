@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8" />
+    <title>我的第一篇 Hexo 文章 | 奶糖の小窝</title>
+    <meta name="author" content="milkcandy" />
+    <meta name="description" content="拾枝杂谈" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>正在加载喵~</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>奶糖の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;奶糖の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>我的第一篇 Hexo 文章</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/12/3
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>这是一个普通段落，可以 <strong>加粗</strong>、<em>斜体</em>、<del>删除线</del>。</p>
+<blockquote>
+<p>这是引用块（用于强调、引用文字）。</p>
+<span id="more"></span>
+</blockquote>
+<hr>
+<h3 id="📋-列表"><a href="#📋-列表" class="headerlink" title="📋 列表"></a>📋 列表</h3><p><strong>无序列表：</strong></p>
+<ul>
+<li>苹果</li>
+<li>香蕉</li>
+<li>草莓</li>
+</ul>
+<p><strong>有序列表：</strong></p>
+<ol>
+<li>吃早餐</li>
+<li>写代码</li>
+<li>睡觉</li>
+</ol>
+<hr>
+<h3 id="🔗-链接与图片"><a href="#🔗-链接与图片" class="headerlink" title="🔗 链接与图片"></a>🔗 链接与图片</h3><p><a href="https://example.com/">点我访问奶糖主页</a></p>
+<p><img src="https://placekitten.com/300/200" alt="可爱的猫咪"></p>
+<hr>
+<h3 id="💻-代码块"><a href="#💻-代码块" class="headerlink" title="💻 代码块"></a>💻 代码块</h3><p>行内代码：<code>console.log(&quot;Hello!&quot;)</code></p>
+<p>多行代码（带语言标识）：</p>
+<pre><code class="js">function greet(name) {
+  console.log(`你好, ${name}！`);
+}
+greet(&#39;奶糖&#39;);
+</code></pre>
+<think>
+嗯，用户之前询问了关于Java泛型的问题，并且我已经给出了详细的解释。现在用户又提出要求，希望将这些内容以Markdown格式呈现出来。看起来用户可能需要一个结构化的文档或笔记，方便阅读和整理。
+
+<p>首先，我要考虑如何组织内容，使其在Markdown中清晰易懂。我应该按照逻辑顺序划分不同的部分，比如基本概念、语法、核心机制等，并且每个部分下再细分小节。这样读者可以一步步深入理解泛型的各个方面。</p>
+<p>接下来，我需要确保每个部分都有足够的细节和例子来支撑说明。例如，在解释基本语法时，提供具体的代码示例会更有助于理解。同时，要注意使用清晰的标题和子标题，使结构一目了然。</p>
+<p>另外，用户可能对某些高级主题如类型擦除和通配符不太熟悉，所以在这些部分需要详细解释，并且用通俗易懂的语言来说明其工作原理和应用场景。此外，提供解决方法的部分也很重要，帮助读者了解如何应对泛型使用中遇到的限制。</p>
+<p>最后，总结部分应该简明扼要地回顾关键点，强化对泛型的整体理解。整个思考过程中，我要确保内容既全面又易于消化，满足用户的学习需求。<br></think></p>
+<h3 id="Java中的泛型详解"><a href="#Java中的泛型详解" class="headerlink" title="Java中的泛型详解"></a>Java中的泛型详解</h3><h4 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h4><p>泛型（Generics）是Java中一种强大的编程机制，允许我们在编写代码时使用<strong>类型参数</strong>而不是具体的类型。这样可以在运行时指定具体类型，从而提高代码的灵活性和复用性。</p>
+<hr>
+<h4 id="2-泛型的基本语法"><a href="#2-泛型的基本语法" class="headerlink" title="2. 泛型的基本语法"></a>2. 泛型的基本语法</h4><h5 id="1-1-定义泛型类"><a href="#1-1-定义泛型类" class="headerlink" title="1.1 定义泛型类"></a>1.1 定义泛型类</h5><p>一个泛型类可以通过在定义中添加类型参数来声明。例如：</p>
+<pre><code class="java">public class Box&lt;T&gt; {
+    private T content;
+
+    public void set(T content) {
+        this.content = content;
+    }
+
+    public T get() {
+        return content;
+    }
+}
+</code></pre>
+<ul>
+<li><code>T</code> 是一个<strong>类型参数</strong>，表示该类可以处理的任何类型。</li>
+<li>类的方法和字段都可以使用这个类型参数。</li>
+</ul>
+<h5 id="1-2-使用泛型"><a href="#1-2-使用泛型" class="headerlink" title="1.2 使用泛型"></a>1.2 使用泛型</h5><p>在创建泛型类的实例时，必须指定具体类型。例如：</p>
+<pre><code class="java">Box&lt;String&gt; stringBox = new Box&lt;&gt;();
+stringBox.set(&quot;Hello&quot;);
+String str = stringBox.get();
+
+Box&lt;Integer&gt; integerBox = new Box&lt;&gt;();
+integerBox.set(123);
+Integer num = integerBox.get();
+</code></pre>
+<h5 id="1-3-泛型接口和方法"><a href="#1-3-泛型接口和方法" class="headerlink" title="1.3 泛型接口和方法"></a>1.3 泛型接口和方法</h5><p>泛型也可以用于接口和方法。例如：</p>
+<pre><code class="java">public interface Comparator&lt;T&gt; {
+    int compare(T a, T b);
+}
+
+public class Util {
+    public static &lt;T&gt; void sort(List&lt;T&gt; list) {
+        // 排序逻辑
+    }
+}
+</code></pre>
+<hr>
+<h4 id="3-泛型的核心机制"><a href="#3-泛型的核心机制" class="headerlink" title="3. 泛型的核心机制"></a>3. 泛型的核心机制</h4><h5 id="2-1-类型擦除（Type-Erasure）"><a href="#2-1-类型擦除（Type-Erasure）" class="headerlink" title="2.1 类型擦除（Type Erasure）"></a>2.1 类型擦除（Type Erasure）</h5><p>Java中的泛型是通过<strong>类型擦除</strong>实现的。这意味着编译器会将所有类型参数替换为一个特定的通用类型（通常是<code>Object</code>），并在运行时无法保留这些类型信息。</p>
+<ul>
+<li>这种设计使得Java的泛型与C++不同，它不是真正的“模板”。</li>
+<li>类型擦除的优点是确保了向后兼容性，但也会带来一些限制。</li>
+</ul>
+<h5 id="2-2-泛型的实际类型"><a href="#2-2-泛型的实际类型" class="headerlink" title="2.2 泛型的实际类型"></a>2.2 泛型的实际类型</h5><p>在运行时，泛型类的实际类型可以通过反射或<code>Type</code>接口获取。例如：</p>
+<pre><code class="java">import java.lang.reflect.ParameterizedType;
+
+public class Example {
+    public static void main(String[] args) throws Exception {
+        Box&lt;String&gt; box = new Box&lt;&gt;();
+        System.out.println(box.getClass().getGenericSuperclass());
+    }
+}
+</code></pre>
+<hr>
+<h4 id="4-泛型的高级主题"><a href="#4-泛型的高级主题" class="headerlink" title="4. 泛型的高级主题"></a>4. 泛型的高级主题</h4><h5 id="3-1-类型推断（Type-Inference）"><a href="#3-1-类型推断（Type-Inference）" class="headerlink" title="3.1 类型推断（Type Inference）"></a>3.1 类型推断（Type Inference）</h5><p>Java编译器可以自动推断类型参数，从而简化代码。例如：</p>
+<pre><code class="java">Box&lt;String&gt; box = new Box&lt;&gt;(); // 推断T为String
+</code></pre>
+<h5 id="3-2-上下文绑定（Contextual-Binding）"><a href="#3-2-上下文绑定（Contextual-Binding）" class="headerlink" title="3.2 上下文绑定（Contextual Binding）"></a>3.2 上下文绑定（Contextual Binding）</h5><p>在某些情况下，类型参数可以在上下文中被进一步约束。例如：</p>
+<pre><code class="java">&lt;T extends Comparable&lt;? super T&gt;&gt;
+</code></pre>
+<hr>
+<h4 id="5-泛型的实际应用"><a href="#5-泛型的实际应用" class="headerlink" title="5. 泛型的实际应用"></a>5. 泛型的实际应用</h4><h5 id="4-1-集合框架"><a href="#4-1-集合框架" class="headerlink" title="4.1 集合框架"></a>4.1 集合框架</h5><p>泛型在Java集合框架中得到了广泛应用。例如：</p>
+<ul>
+<li><code>ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();</code></li>
+<li><code>HashMap&lt;Integer, String&gt; map = new HashMap&lt;&gt;();</code></li>
+</ul>
+<h5 id="4-2-自定义数据结构"><a href="#4-2-自定义数据结构" class="headerlink" title="4.2 自定义数据结构"></a>4.2 自定义数据结构</h5><p>编写通用的容器或工具类，例如<code>Pair</code>, <code>Optional</code>等。</p>
+<h5 id="4-3-方法间传递类型信息"><a href="#4-3-方法间传递类型信息" class="headerlink" title="4.3 方法间传递类型信息"></a>4.3 方法间传递类型信息</h5><p>在方法参数中使用泛型，使得方法更灵活。例如：</p>
+<pre><code class="java">public static &lt;T&gt; T identity(T t) {
+    return t;
+}
+</code></pre>
+<hr>
+<h4 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h4><ul>
+<li>泛型通过引入<strong>类型参数</strong>，提高了代码的复用性和安全性。</li>
+<li>类型擦除是Java泛型的核心机制，也是其与C++模板不同的关键点。</li>
+<li>泛型在集合框架、自定义类和方法设计中得到了广泛应用。</li>
+</ul>
+<p>希望这些内容能帮助你更好地理解Java中的泛型！</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 奶糖の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;milkcandy
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
