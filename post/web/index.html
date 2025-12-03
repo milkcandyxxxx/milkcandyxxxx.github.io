@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8" />
+    <title>利用树莓派搭建web服务器（云主机通用） | 奶糖の小窝</title>
+    <meta name="author" content="milkcandy" />
+    <meta name="description" content="拾枝杂谈" />
+    <meta name="keywords" content="milkcnandy" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>正在加载喵~</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>奶糖の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;奶糖の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>利用树莓派搭建web服务器（云主机通用）</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/2/4
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                拾枝杂谈
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ff7d73">
+                    未标记
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>前言 前些天（其实蛮久了）<a target="_blank" rel="noopener" href="https://www.hao-ming.top/">溟狗</a>大佬对于奶糖的博客提出了疑问： 奶糖的博客看不到头像（原因是头像服务Gravatar在境内是封锁的）但是奶糖的博客ip解析地址在境外，但是却不能境外访问。 原因：奶糖的web托管服务是那种仅为学习提供的（价格低），为了防止有人搭建恶意网站所以管理员封锁了外网访问。 于是，奶糖也是在看到<a target="_blank" rel="noopener" href="https://www.cpolar.com/">cpolar</a>的交流群内，…</p>
+<span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前些天（其实蛮久了）<a target="_blank" rel="noopener" href="https://www.hao-ming.top/">溟狗</a>大佬对于奶糖的博客提出了疑问：<br>奶糖的博客看不到头像（原因是头像服务Gravatar在境内是封锁的）但是奶糖的博客ip解析地址在境外，但是却不能境外访问。<br>原因：奶糖的web托管服务是那种仅为学习提供的（价格低），为了防止有人搭建恶意网站所以管理员封锁了外网访问。<br>于是，奶糖也是在看到<a target="_blank" rel="noopener" href="https://www.cpolar.com/">cpolar</a>的交流群内，有人利用本地服务器+内网穿透的组合搭建了基于<br>Apache和WordPress的博客。奶糖无法做到电脑常开，但是突然想起来自己有一个树莓派3b，也许可也用来搭建？（不过因为板子性能差使用选择了nginx）<br>开工！！！！！！！！</p>
+<h2 id="准备工作（如果是云服务器，请直接跳过此步骤）"><a href="#准备工作（如果是云服务器，请直接跳过此步骤）" class="headerlink" title="准备工作（如果是云服务器，请直接跳过此步骤）"></a>准备工作（如果是云服务器，请直接跳过此步骤）</h2><p>[collapse title&#x3D;”准备工作”]<br>配置树莓派的方法有很多（有很多种有无屏幕，是否为官方的系统等等）这里选用奶糖认为最最最简单的来进行d&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;(￣▽￣*)b</p>
+<ol>
+<li><p>首先进入树莓派官网下载树莓派官方的刷系统工具<a target="_blank" rel="noopener" href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> 不过可能需要魔法<del>（就请自己解决啦</del>）</p>
+</li>
+<li><p>进入后选择自己的树莓派版本，选择Ubuntu 22.04LTS 32位（64位没有尝试，不过应该也行…..？(●ˇ∀ˇ●)）最后选择内存卡即可（要先格式化！！！！！！！）注意，在写入前会让我们编辑设置（在设置里设置用户名及密码，并打开ssh登陆，最重要的是wifi的配置一定要，因为后续再想配置网络只能通过串行总线，连接屏幕，或修改文件来进行）。写入完成后插进树莓派连接电源开机即可。</p>
+</li>
+<li><p>打开所连接网络的路由器管理页面（通常会写在路由器背面，注意电脑所连接网络必须是路由器的网络才能登陆到管理页面）然后查看树莓派所分配到的ip地址（设备名称即为上面设置的）<br>利用ssh连接到树莓派，这里推荐使用<a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/download.html">mobaxterm</a>或者是putty。填入树莓派的IP地址，port设置为22即可。进行连接，填入用户名和密码即可正常进入系统。</p>
+</li>
+<li><p>进行系统换源（云服务器一般是换好的，但是树莓派这个系统里默认的是ubuntu的官方源，很慢（＞人＜；））<br>如果图方便可用直接先进入root<code>sudo -i</code><br>当然比建议这么做（可能把系统玩坏，如果实力够硬请忽视奶糖的这段话(　o&#x3D;^•ェ•)o　┏━┓）<br>输入进入源的配置文件（有需要的话可以安装其他文本编辑器vim等，nano不好用qwq）</p>
+<pre><code class="linux">
+</code></pre>
+</li>
+</ol>
+<p>sudo nano &#x2F;etc&#x2F;apt&#x2F;sources.list</p>
+<pre><code>将文件中的内容全部注释掉（前面加上#）当然不需要的话直接全部删了也行，换入下方的源
+
+    ```linux
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse
+
+deb http://ports.ubuntu.com/ubuntu-ports/ jammy-security main restricted universe multiverse
+# deb-src http://ports.ubuntu.com/ubuntu-ports/ jammy-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-proposed main restricted universe multiverse
+# # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-proposed main restricted universe multiverse
+</code></pre>
+<p>如果用的其他版本系统自行到源网站寻找，这里用的是<a target="_blank" rel="noopener" href="https://www.iiecho.com/archives/typecho-install.html#:~:text=Typecho%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%201%20%E5%AE%89%E8%A3%85%E6%89%80%E9%9C%80%E7%9A%84%E7%8E%AF%E5%A2%83-Nginx%E5%92%8CPHP%20Nginx%20...%202%20%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93MySQL%20sudo,7%20%E5%AE%8C%E6%88%90%E5%AE%89%E8%A3%85%20%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%AE%BF%E9%97%AE%20https%3A%2F%2Fyour_domain.com%2Finstall.php%20%E5%B9%B6%E6%8C%89%E7%85%A7%E5%AE%89%E8%A3%85%E5%90%91%E5%AF%BC%E7%9A%84%E6%8C%87%E7%A4%BA%E5%AE%8C%E6%88%90%20Typecho%20%E7%9A%84%E5%AE%89%E8%A3%85%E3%80%82%20">清华源</a>（如果真的是看教程的，，，应该都选的是奶糖说的系统啦！！！╰（‵□′）╯）<br>CTRL+O保存，CTRL+X退出。（一定要用sudo，要不然会没有修改权限）<br>执行下方指令进行更新</p>
+<pre><code>```linux
+</code></pre>
+<p>sudo apt-get update &amp;&amp; apt-get upgrade</p>
+<pre><code>遇到选项填写y即可，是对软件进行更新。
+如果后续遇见`No containers need to be restarted.No user sessions are running outdated binaries.No VM guests are running outdated hypervisor (qemu) binaries on this host.`这样的提示，是因为出发了needrestart的自动更新，后续可能也会遇到，要解决的话执行`sudo apt purge needrestart`即可。
+
+最后如果需要使用中文的话执行
+
+    ```linux
+sudo apt-get install language-pack-zh-hans
+sudo update-locale LANG=zh_CN.UTF-8
+</code></pre>
+<p>然后sudo reboot重启即可<br>but，虽然奶糖英语不好，但是还是要尽量看一些英文的，如果遇到不支持中文的还能自己看看不是嘛~<br>[&#x2F;collapse]</p>
+<h2 id="安装LNMP环境"><a href="#安装LNMP环境" class="headerlink" title="安装LNMP环境"></a>安装LNMP环境</h2><ol>
+<li><p>安装nginx</p>
+<p>安装依赖</p>
+<pre><code class="linux">sudo apt install -y gcc zlib1g-dev libpcre3 libpcre3-dev openssl libssl-dev
+</code></pre>
+<p>安装nginx</p>
+<pre><code class="linux">sudo apt install -y nginx
+</code></pre>
+<p>配置nginx<br>&#96;&#96;&#96;linux</p>
+</li>
+</ol>
+<p>sudo nano &#x2F;etc&#x2F;nginx&#x2F;nginx.conf<br>    <code>         </code>linux<br>user www-data;<br>worker_processes 1; #修改这里<br>pid &#x2F;var&#x2F;run&#x2F;nginx.pid;<br>events {<br>worker_connections 64; #修改这里<br>#multi_accept on;<br>}<br>    <code>    将下方代码的注释去掉（就是把#删除）        </code>linux<br>gzip on;<br>gzip_disable “msie6”;<br>gzip_vary on;<br>gzip_proxied any;<br>gzip_comp_level 6;<br>gzip_buffers 16 8k;<br>gzip_http_version 1.1;<br>gzip_types text&#x2F;plain text&#x2F;css application&#x2F;json application&#x2F;x-javascript text&#x2F;xml application&#x2F;xml application&#x2F;xml+rss text&#x2F;javascript;<br>    &#96;&#96;&#96;<br>    CTRL+O保存，CTRL+X退出<br>    上述配置是typecho所必须的要不然会导致管理页面404（其他博客系统不详）</p>
+<pre><code>启动nginx
+```linux
+sudo service nginx start
+```
+然后浏览器进入树莓派的ip（和上面的一样）即可看到welcome to nginx，即代表成功（云服                                务器需要开放80端口，如果不会还请自行百度吧qwq）
+</code></pre>
+<ol start="2">
+<li>安装php<br>安装php和相关扩展<br>&#96;&#96;&#96;linux</li>
+</ol>
+<p>   sudo apt install php-fpm php-mysql php-curl php-gd php-mbstring php-xml<br>    &#96;&#96;&#96;<br>    这里安装的是最新版如果需要可以进行更改如：</p>
+<pre><code>    ```linux
+</code></pre>
+<p>sudo apt install php8.1-fpm php8.1-mysql php8.1-curl php8.1-gd php8.1-mbstring php8.1-xml<br>    <code>    配置php        </code>linux<br>sudo nano &#x2F;etc&#x2F;php&#x2F;这里是对应的php版本&#x2F;fpm&#x2F;php-fpm.conf<br>    <code>         </code>linux<br>; The maximum number of processes FPM will fork. This has been design to control<br>; the global number of processes when using dynamic PM within a lot of pools.<br>; Use it with caution.<br>; Note: A value of 0 indicates no limit<br>; Default Value: 0<br>process.max &#x3D; 4 #修改这里<br>    <code>    保存退出        </code>linux<br>sudo nano &#x2F;etc&#x2F;php&#x2F;这里是对应的php版本&#x2F;fpm&#x2F;php.ini<br>    <code>         </code>linux<br>; Maximum amount of memory a script may consume (128MB)<br>;<a target="_blank" rel="noopener" href="http://php.net/memory-limit">http://php.net/memory-limit</a><br>memory_limit &#x3D; 32M #修改这里<br>    &#96;&#96;&#96;<br>    保存退出<br>    上述配置是typecho所必须的要不然会导致管理页面404（其他博客系统不详）</p>
+<ol start="3">
+<li><p>配置nginx支持php</p>
+<pre><code>```linux
+</code></pre>
+</li>
+</ol>
+<p>sudo nano &#x2F;etc&#x2F;nginx&#x2F;sites-enabled&#x2F;default<br>    &#96;&#96;&#96;<br>    找到如下内容</p>
+<pre><code>        ```linux
+</code></pre>
+<p>location &#x2F; {<br>      # First attempt to serve request as file, then<br>      # as directory, then fall back to displaying a 404.<br>      try_files $uri $uri&#x2F; &#x3D;404;<br>        }<br>    &#96;&#96;&#96;<br>    将上述内容替换为</p>
+<pre><code>            ```linux
+</code></pre>
+<p>location &#x2F; {<br>index  index.html index.htm index.php default.html default.htm default.php;<br>if (-f $request_filename&#x2F;index.html){<br>    rewrite (.<em>) $1&#x2F;index.html break;<br>}<br>if (-f $request_filename&#x2F;index.php){<br>    rewrite (.</em>) $1&#x2F;index.php;<br>}<br>if (!-f $request_filename){<br>    rewrite (.*) &#x2F;index.php;<br>}<br>}</p>
+<p>location <del>.php(/.<em>)</em>$ {<br>fastcgi_pass unix:&#x2F;run&#x2F;php&#x2F;php这里是对应的php版本-fpm.sock;<br>#fastcgi_pass 127.0.0.1:9000;<br>fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;<br>include fastcgi_params;<br>}<br>    <code>    保存退出     完成后重启nginx和php-fpm                </code>linux<br>sudo &#x2F;etc&#x2F;init.d&#x2F;nginx restart<br>sudo &#x2F;etc&#x2F;init.d&#x2F;php这里是对应的php版本-fpm restart<br>    &#96;&#96;&#96;<br>    完成后就有了web服务器了ε&#x3D;ε&#x3D;ε&#x3D;(</del>￣▽￣)~</p>
+<h1 id="安装mysql数据库"><a href="#安装mysql数据库" class="headerlink" title="安装mysql数据库"></a>安装mysql数据库</h1><pre><code>                       ```linux
+</code></pre>
+<p>sudo apt install -y mysql-server<br>    &#96;&#96;&#96;<br>   以root权限进入数据库，输入密码</p>
+<pre><code class="linux">mysql -u root -p
+ ```
+新建用户
+```linux
+create user &#39;这里是名字！&#39; @&#39;%&#39; identified by &#39;这里是密码！&#39;;
+ ```
+新建数据库
+ ```linux
+CREATE DATABASE 这里是数据库名字;
+ ```
+  将数据库权限给到用户
+         ```linux
+grant all on 这里是数据库名字.* to 这里是用户名@&#39;%&#39;;
+ ```
+输入`quit`退出
+重启数据库
+     ```linux
+service mysql restart
+ ```
+## 安装typecho ##
+
+ 1. 先给安装文件夹权限
+
+             ```linux
+sudo chown -R www-data:www-data /var/www/html
+ ```
+ 这里也可以是777权限（但是不建议）
+
+ 2. 下载typecho
+         ```linux
+cd /var/www/html
+sudo wget https://github.com/typecho/typecho/releases/download/v0.9-13.12.12-release/0.9.13.12.12.-release.tar.gz
+ ```
+ 解压
+ ```linux
+tar zxvf 0.9.13.12.12.-release.tar.gz
+mv build/* /var/www/html
+</code></pre>
+<ol start="3">
+<li>访问ip地址即可进入安装页面<br>选择原生适配器即可，按照内容填写内容安装完成。</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结了一些自己遇到的问题，不断更改试错qwq，搞了大半夜（；´д｀）ゞ，算是历尽坎坷惹</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39125451/article/details/84898288">https://blog.csdn.net/qq_39125451/article/details/84898288</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61578123/article/details/130906874">https://blog.csdn.net/m0_61578123/article/details/130906874</a><br><a target="_blank" rel="noopener" href="https://www.iiecho.com/archives/typecho-install.html#:~:text=Typecho%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%201%20%E5%AE%89%E8%A3%85%E6%89%80%E9%9C%80%E7%9A%84%E7%8E%AF%E5%A2%83-Nginx%E5%92%8CPHP%20Nginx%20...%202%20%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93MySQL%20sudo,7%20%E5%AE%8C%E6%88%90%E5%AE%89%E8%A3%85%20%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%AE%BF%E9%97%AE%20https%3A%2F%2Fyour_domain.com%2Finstall.php%20%E5%B9%B6%E6%8C%89%E7%85%A7%E5%AE%89%E8%A3%85%E5%90%91%E5%AF%BC%E7%9A%84%E6%8C%87%E7%A4%BA%E5%AE%8C%E6%88%90%20Typecho%20%E7%9A%84%E5%AE%89%E8%A3%85%E3%80%82%20">Nice2CU</a></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 奶糖の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;milkcandy
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

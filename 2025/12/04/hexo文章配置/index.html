@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8" />
+    <title> | 奶糖の小窝</title>
+    <meta name="author" content="milkcandy" />
+    <meta name="description" content="拾枝杂谈" />
+    <meta name="keywords" content="milkcnandy" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>正在加载喵~</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>奶糖の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;奶糖の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/12/4
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>以下是包含 <strong>Hexo 所有常用 Front-matter 字段</strong> 的完整文章示例（涵盖基础字段、扩展字段、SEO 优化、功能控制等），直接复制到 Hexo 博客 <code>source/_posts</code> 目录下，修改内容即可使用：</p>
+<span id="more"></span>
+
+<pre><code class="markdown">---
+# 核心必填字段（缺失会导致文章生成失败）
+title: Hexo 全字段文章示例（含完整 Front-matter 说明）
+date: 2025-12-04 15:30:00+08:00  # 文章创建时间（东八区时区）
+updated: 2025-12-04 16:45:00+08:00  # 最后更新时间（自动同步修改时间，也可手动指定）
+
+# 分类与标签（内容组织核心）
+categories:  # 多级分类（父分类在前，最多支持3级）
+  - 技术教程
+  - 博客开发
+  - Hexo 进阶
+tags:  # 多标签（精细化分类，支持任意数量）
+  - Hexo
+  - Front-matter
+  - 博客搭建
+  - Markdown
+  - SEO 优化
+
+# 摘要与SEO（提升曝光和阅读体验）
+excerpt: 本文是 Hexo 博客的全字段文章示例，包含所有常用 Front-matter 配置说明、Markdown 正文写法、公式渲染、代码高亮等功能演示，适合新手直接复用作为模板。  # 手动指定摘要（列表页显示，优先级高于 auto）
+# excerpt: auto  # 可选：自动截取文章前150字（Hexo默认，需主题支持）
+keywords: [&quot;Hexo 文章模板&quot;, &quot;Front-matter 全字段&quot;, &quot;Hexo 进阶配置&quot;, &quot;Markdown 博客&quot;]  # SEO 关键词（搜索引擎收录用）
+description: Hexo 博客全字段文章模板，包含分类、标签、摘要、目录、评论、公式渲染等所有常用配置，新手可直接复制使用。  # 页面描述（部分主题会显示在摘要下方/SEO 元标签）
+
+# 发布状态与访问控制
+draft: false  # 是否为草稿（true=草稿，不生成/不发布；false=正式发布）
+hidden: false  # 是否隐藏文章（true=不显示在列表页，仅可通过直接链接访问；false=正常显示）
+password: &quot;&quot;  # 访问密码（可选，如 &quot;123456&quot;，需主题支持，输入密码才可查看全文）
+
+# 链接配置（自定义访问地址）
+permalink: /tutorial/hexo-full-front-matter-template/  # 自定义永久链接（默认是 /:year/:month/:day/:title/，此处改为分类+自定义名称）
+abbrlink: 8866  # 短链接（需安装 hexo-abbrlink 插件，生成链接如 /post/8866/，避免标题过长导致链接臃肿）
+post_id: 20251204  # 自定义文章ID（迁移文章时保留原ID，避免旧链接失效，如从Typecho迁移）
+
+# 页面功能控制（需主题支持）
+toc: true  # 是否显示目录（true=显示，基于文章##、###标题生成；false=隐藏）
+toc_depth: 3  # 目录层级（默认2级，支持1-6级，如 3 表示显示 h2、h3 标题）
+comments: true  # 是否开启评论（true=开启，需配置 Disqus/Gitalk 等评论插件；false=关闭）
+author: 豆包编程助手  # 文章作者（多作者博客适用，默认读取 _config.yml 中的 author）
+cover: /images/covers/hexo-template.jpg  # 文章封面图（需主题支持，列表页/文章顶部显示，可填本地路径或网络图片URL）
+top: 10  # 文章置顶（数字越大优先级越高，如 10 比 5 更靠前，需主题支持；true=默认优先级）
+
+# 特殊功能支持（需安装对应插件/主题支持）
+mathjax: true  # 是否加载 MathJax 数学公式渲染（true=支持 LaTeX 公式；false=不加载）
+# mathjax:  # 精细化配置（可选）
+#   enable: true
+#   per_page: true  # 仅当前文章加载
+#   cdn: https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js  # 自定义 MathJax CDN
+mermaid: true  # 是否支持 Mermaid 流程图（需安装 hexo-filter-mermaid-diagrams 插件）
+code_copy: true  # 是否显示代码块复制按钮（需主题支持或安装 hexo-code-block-copy 插件）
+copyright:  # 版权声明（需主题支持）
+  enable: true
+  text: &quot;本文采用 CC BY-NC-SA 4.0 协议授权，转载请注明出处。&quot;  # 自定义版权文本
+original: true  # 是否原创（true=标记为原创；false=转载，部分主题会显示原创/转载标识）
+original_url: &quot;&quot;  # 转载原文地址（若 original: false，填写原文链接）
+
+# 其他扩展字段（根据主题/插件需求添加）
+readtime: true  # 显示阅读时长（需主题支持，自动计算字数预估时间）
+sticky: true  # 等价于 top，部分主题用 sticky 表示置顶
+banner: /images/banners/hexo-banner.png  # 顶部横幅图（部分主题专用字段）
+---
+
+## 一、文章说明
+这是一篇 **Hexo 全字段模板文章**，包含了所有常用的 Front-matter 配置，以及 Markdown 正文的常用写法演示（标题、段落、代码块、公式、流程图等）。
+
+### 1.1 模板使用方法
+1. 复制本文到 Hexo 博客的 `source/_posts` 目录下；
+2. 修改 Front-matter 中的 `title`、`date`、`categories`、`tags` 等核心字段；
+3. 替换正文内容为自己的文章（Markdown 格式）；
+4. 执行 `hexo g` 生成静态文件，`hexo d` 部署到远程，或 `hexo s` 本地预览（http://localhost:4000）。
+
+## 二、Markdown 正文演示
+### 2.1 基础格式
+- 列表项 1（无序列表）
+- 列表项 2
+  - 子列表项（缩进 2 个空格）
+1. 有序列表项 1
+2. 有序列表项 2
+
+**加粗文本**、*斜体文本*、***加粗斜体***、~~删除线~~、[链接](https://hexo.io)、![图片](https://picsum.photos/800/400)（示例图片）
+
+&gt; 引用文本：Hexo 是一个快速、简洁且高效的博客框架，支持 Markdown 语法，可轻松生成静态博客。
+
+### 2.2 代码块（支持语法高亮）
+```javascript
+// JavaScript 代码示例
+function hexoDemo() {
+  console.log(&quot;Hexo 全字段模板文章&quot;);
+  const frontMatter = &quot;包含所有常用配置，新手直接复用&quot;;
+  return frontMatter;
+}
+hexoDemo();
+</code></pre>
+<pre><code class="python"># Python 代码示例
+def hexo_template():
+    print(&quot;Hexo 文章模板，支持多语言代码高亮&quot;)
+    return True
+
+if __name__ == &quot;__main__&quot;:
+    hexo_template()
+</code></pre>
+<h3 id="2-3-数学公式（需开启-mathjax-true）"><a href="#2-3-数学公式（需开启-mathjax-true）" class="headerlink" title="2.3 数学公式（需开启 mathjax: true）"></a>2.3 数学公式（需开启 mathjax: true）</h3><p>行内公式：$E&#x3D;mc^2$（爱因斯坦质能方程）</p>
+<p>块级公式：<br>$$<br>\sum_{i&#x3D;1}^n i &#x3D; \frac{n(n+1)}{2}<br>$$<br>（自然数求和公式）</p>
+<h3 id="2-4-流程图（需开启-mermaid-true-安装对应插件）"><a href="#2-4-流程图（需开启-mermaid-true-安装对应插件）" class="headerlink" title="2.4 流程图（需开启 mermaid: true + 安装对应插件）"></a>2.4 流程图（需开启 mermaid: true + 安装对应插件）</h3><pre><code class="mermaid">flowchart TD
+    A[开始] --&gt; B[编写 Markdown 文章]
+    B --&gt; C[配置 Front-matter]
+    C --&gt; D[hexo g 生成静态文件]
+    D --&gt; E{本地预览？}
+    E --&gt;|是| F[hexo s 启动服务]
+    E --&gt;|否| G[hexo d 部署到远程]
+    F --&gt; H[浏览器访问 localhost:4000]
+    G --&gt; I[访问博客域名查看效果]
+    H --&gt; J[修改优化文章]
+    I --&gt; J
+    J --&gt; B
+    B --&gt; K[完成发布]
+</code></pre>
+<h2 id="三、关键配置注意事项"><a href="#三、关键配置注意事项" class="headerlink" title="三、关键配置注意事项"></a>三、关键配置注意事项</h2><ol>
+<li><strong>Front-matter 格式</strong>：必须用 <code>---</code> 包裹在文章最顶部，字段名冒号后需加空格（如 <code>title: 标题</code>，不能写成 <code>title:标题</code>）；</li>
+<li><strong>必填字段</strong>：<code>title</code> 和 <code>date</code> 不可缺失，<code>draft: false</code> 是文章发布的必要条件；</li>
+<li><strong>插件依赖</strong>：<code>abbrlink</code>、<code>mermaid</code>、<code>mathjax</code> 等功能需安装对应插件（参考下方命令）；</li>
+<li><strong>主题兼容性</strong>：<code>cover</code>、<code>top</code>、<code>copyright</code> 等字段需主题支持，若配置后无效果，可查看主题文档确认是否支持。</li>
+</ol>
+<h3 id="必备插件安装命令（终端执行）"><a href="#必备插件安装命令（终端执行）" class="headerlink" title="必备插件安装命令（终端执行）"></a>必备插件安装命令（终端执行）</h3><pre><code class="bash"># 1. 短链接插件（abbrlink）
+npm install hexo-abbrlink --save
+
+# 2. Mermaid 流程图插件
+npm install hexo-filter-mermaid-diagrams --save
+
+# 3. 代码块复制按钮插件
+npm install hexo-code-block-copy --save
+
+# 4. 阅读时长统计插件
+npm install hexo-wordcount --save
+</code></pre>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>本文模板包含了 Hexo 文章的所有核心配置和常用功能，新手可直接复用，减少配置成本。如果需要添加特殊功能（如音乐嵌入、视频嵌入），可根据主题&#x2F;插件需求在 Front-matter 中添加对应字段（如 <code>music: {id: &quot;123456&quot;, type: &quot;netease&quot;}</code>，需主题支持网易云音乐嵌入）。</p>
+<p>更多 Hexo 配置细节可参考 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">Hexo 官方文档</a>。</p>
+<pre><code>
+### 模板核心优势：
+1. **全字段覆盖**：包含基础配置、分类标签、SEO 优化、访问控制、特殊功能（公式、流程图）等所有常用字段；
+2. **直接复用**：修改少量核心字段（标题、分类、正文）即可发布，无需从零配置；
+3. **避坑指南**：内置字段说明、插件安装命令、格式注意事项，新手不易出错；
+4. **兼容性强**：适配大多数 Hexo 主题（Next、Butterfly、Fluid 等），特殊字段不支持时会自动忽略，不影响文章发布。
+
+### 使用步骤：
+1. 复制上述代码，在 `source/_posts` 目录新建文件（如 `hexo-full-template.md`），粘贴内容；
+2. 按自己的需求修改 `title`、`categories`、`tags`、`excerpt` 等字段；
+3. 替换正文部分为自己的文章内容（Markdown 格式）；
+4. 安装需要的插件（如流程图、短链接插件，终端执行模板中的 `npm install` 命令）；
+5. 执行 `hexo s` 本地预览，确认无误后 `hexo g -d` 一键生成并部署。
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 奶糖の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;milkcandy
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

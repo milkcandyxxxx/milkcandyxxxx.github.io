@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>标签 | 奶糖の小窝</title>
+    <title>day1 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,67 +154,117 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>day1</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/16
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                未标记
+                未来与梦
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                安全
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ff7d73">
+                    未标记
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                原神
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                拾枝杂谈
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E9%9B%AA%E6%99%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                雪景
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>前言 第一周的学习成果（其实也就一天，因为书刚到(+_+)?） 明白了html和css的用处 html的基本书写方法 css的部分书写 html 与其说是语言，倒不如说是一种标记 html负责告诉浏览器如何显示内容，显示什么内容（有点像写作文时的格式） html welcome to milkcandy body { backgroundcolor :4fb…</p>
+<span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>第一周的学习成果（其实也就一天，因为书刚到(+_+)?）<br>明白了html和css的用处<br>html的基本书写方法<br>css的部分书写</p>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><p>与其说是语言，倒不如说是一种标记<br>html负责告诉浏览器如何显示内容，显示什么内容（有点像写作文时的格式）</p>
+<pre><code class="html">&lt;html&gt; &lt;!--文章的开始--&gt;
+    &lt;head&gt;&lt;!--页面的头部标题开始--&gt;
+        &lt;title&gt;welcome to milkcandy&lt;/title&gt;&lt;!--页面的头部标题--&gt;
+            &lt;style type=&quot;text/css&quot;&gt; 
+                body { background-color :#4fb8c8}
+            &lt;/style&gt; &lt;!--CSS样式，背景颜色--&gt;
+    &lt;/head&gt;
+    &lt;img src=&quot;https://i.postimg.cc/NMsqpxvM/111214302-p0.jpg&quot;&gt; &lt;!--插入的图片--&gt;
+    &lt;body&gt;&lt;!--主体开始--&gt;        
+        &lt;H1&gt;&lt;!--标题1--&gt;
+            &lt;em&gt;&lt;!--斜体--&gt;
+                这里是标题1，采用了斜体&lt;br&gt;
+                    &lt;q&gt;&lt;!--引用（短）--&gt;
+                        斜体加引用
+                    &lt;/q&gt;&lt;br&gt;
+            &lt;/em&gt;
+            &lt;q&gt;只是引用&lt;/q&gt;
+        &lt;/H1&gt;
+        &lt;p&gt;&lt;!--内容--&gt;
+            这里是标题1的内容&lt;br&gt;
+            &lt;code&gt;显示代码，bie kan le wo bu hui!&lt;/code&gt;&lt;br&gt;&lt;!--显示代码--&gt;
+            &lt;time&gt;时间文本&lt;/time&gt;&lt;br&gt;&lt;!--时间--&gt;
+            &lt;strong&gt;强调文本&lt;/strong&gt;&lt;br&gt;&lt;!--strong强调文本(加粗)--&gt;
+            &lt;pre&gt;按照原文本格式输出&lt;/pre&gt;&lt;br&gt;&lt;!--指定文本格式--&gt;
+            &lt;a href=&quot;../about/about.html&quot;&gt;这里是跳转页面&lt;/a&gt;&lt;br&gt;&lt;!--指向页面--&gt;
+            &lt;a href=&quot;https://i.postimg.cc/NMsqpxvM/111214302-p0.jpg&quot;&gt;跳转图像&lt;/a&gt;&lt;br&gt;&lt;!--指向图像--&gt;
+        &lt;/p&gt;
+        &lt;blockquote&gt;这里是长引用~~~寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱&lt;br&gt;&lt;!--换行--&gt;
+            寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱寻酱&lt;/blockquote&gt;&lt;!--引用（长）--&gt;
+        &lt;ol&gt;&lt;!--排序（有序）--&gt;&lt;!--ul排序（无序）--&gt;
+            这里是排序
+            &lt;li&gt;xunjiang&lt;/li&gt;&lt;!--包裹内容存放于元素ol--&gt;
+            &lt;li&gt;&lt;em&gt;laogong!&lt;/em&gt;qianxun&lt;/li&gt;
+            &lt;li&gt;hequanshawu&lt;/li&gt;
+            &lt;li&gt;milkcandy&lt;/li&gt;
+        &lt;/ol&gt;       
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>这里是按照书上教的基本元素，用法写的html静态网页（好丑）<br><img src="https://s2.loli.net/2023/12/21/SMRhcoFLjB7zKbe.png" alt="演示"></p>
+<pre><code class="html">    &lt;!--&lt;a&gt;建立链接
+    &lt;time&gt;时间
+    &lt;em&gt;斜体
+    strong强调文本(加粗)
+    pre指定文本格式
+    br换行
+    li列表的元素/ol有序列列表/ul无序列表（必须搭配li使用）
+    q短引用
+    blockquote长引用
+    p一个段落
+    code显示代码
+    ..上级目录
+    img引用图片--&gt;
+</code></pre>
+<p>这里就是奶糖整理的部分代码的含义</p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>与html不太，css是用来美化我们的网页的上文中的body { background-color :#4fb8c8}，就是指将页面背景颜色改为#4fb8c8（淡蓝）。<br>奶糖对于css还没咋学习，所以就到这啦。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>再往后就是一些嵌套，路径等问题，总的来说就是要细心，还有在早些时候就做好内容的整理<br>最后一点就是对于web的部分讲解，大都是理论部分：域名，FTP,URL,HTTP等<br>域名：用于定位网站就是我的<a target="_blank" rel="noopener" href="http://www.milkcandy.shop/">www.milkcandy.shop</a><br>FTP:网络协议，这里了解是为了上传自己的网页到云服务器<br><em>cd:跳转到指定目录&#x2F;put：上传&#x2F;mkdir：新建目录&#x2F;get：获取文件</em><br>HTTP:超文本传输协议（HyperText Transfer Protocol）,一种简单的请求和响应协议<br>绝对路径：..&#x2F;<del>&#x2F;</del>,类似如此部属最少的，从一个文件到另一个<br>默认页面：像网页发送请求后默认响应的文件<br>URL:资源地址，奶糖博客中的图片均是填写的url，打开时候再访问。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>算是了结了大体的html和css，会初步的写一些静态页面，以及如何上传到云服务器中（＞人＜；）</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -242,6 +296,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

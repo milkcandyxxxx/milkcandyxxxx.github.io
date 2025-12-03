@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>标签 | 奶糖の小窝</title>
+    <title>攻防世界666 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,67 +154,98 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>攻防世界666</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/11/19
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                未标记
+                未来与梦
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                安全
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ffa2c4">
+                    未标记
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                原神
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                拾枝杂谈
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E9%9B%AA%E6%99%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                雪景
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>666 直接看到flag，不过当然是假的，输入的是v5,然后经过encode c int __fastcall encode(const char a1, __int64 a2) { _BYTE v3[104]; &#x2F;&#x2F; [rsp+10h] [rbp70h] int v4; &#x2F;&#x2F; [rsp+78h] [rbp8h] int i; &#x2F;&#x2F; [rsp+7Ch] [r…</p>
+<span id="more"></span>
+
+<h2 id="666"><a href="#666" class="headerlink" title="666"></a>666</h2><img src="D:\Programme\Code\python\Reverse\攻防世界\666\666.assets\image-20251119161328747.png" alt="image-20251119161328747" style="zoom:50%;" />
+
+<p>直接看到flag，不过当然是假的，输入的是v5,然后经过encode</p>
+<pre><code class="c">int __fastcall encode(const char *a1, __int64 a2)
+{
+  _BYTE v3[104]; // [rsp+10h] [rbp-70h]
+  int v4; // [rsp+78h] [rbp-8h]
+  int i; // [rsp+7Ch] [rbp-4h]
+
+  i = 0;
+  v4 = 0;
+  if ( strlen(a1) != key )
+    return puts(&quot;Your Length is Wrong&quot;);
+  for ( i = 0; i &lt; key; i += 3 )
+  {
+    v3[i + 64] = key ^ (a1[i] + 6);
+    v3[i + 33] = (a1[i + 1] - 6) ^ key;
+    v3[i + 2] = a1[i + 2] ^ 6 ^ key;
+    *(_BYTE *)(a2 + i) = v3[i + 64];
+    *(_BYTE *)(a2 + i + 1LL) = v3[i + 33];
+    *(_BYTE *)(a2 + i + 2LL) = v3[i + 2];
+  }
+  return a2;
+}
+</code></pre>
+<p>注：这里没有显示的接收返回值是因为传入的是内存位置所以直接修改了<br>s和enflag的值要一样，那现在是已a2求a1</p>
+<pre><code class="python">def encode():
+    v3=[0]*100
+    a1=[&quot;&quot;]*100
+    a2=&#39;izwhroz&quot;&quot;w&quot;v.K&quot;.Ni&#39;
+    for i in range(0,18,3):
+        v3[i+2]=a2[i+2]
+        v3[i+33]=a2[i+1]
+        v3[i+64]=a2[i]
+        a1[i+2]=chr(18^ord(v3[i+2])^6)
+        a1[i+1]=chr((ord(v3[i+33])^18)+6)
+        a1[i]=chr((ord(v3[i+64])^18)-6)
+    print(&#39;&#39;.join(a1))
+encode()
+</code></pre>
+<p>Code_Talkers</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -242,6 +277,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

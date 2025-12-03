@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>标签 | 奶糖の小窝</title>
+    <title>week6 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,67 +154,110 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>week6</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/29
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                未标记
+                未来与梦
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                安全
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">
+                    未标记
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                原神
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                拾枝杂谈
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E9%9B%AA%E6%99%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                雪景
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>[collapse title”第一题(点击打开)”] java public class Ex5_1 { public static void main(String[] args) { try { int num[] new int[10]; System.out.println(“num[10] is “ + num[10]); } catch (Ar…</p>
+<span id="more"></span>
+
+<p>[collapse title&#x3D;”第一题(点击打开)”]</p>
+<pre><code class="java">public class Ex5_1 {
+    public static void main(String[] args) {
+        try {
+            int num[] = new int[10];
+            System.out.println(&quot;num[10] is &quot; + num[10]);
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println(&quot;ArrayIndexOutOfBoundsException&quot;);
+        } catch (ArithmeticException ex) {
+            System.out.println(&quot;ArithmeticException&quot;);
+        } catch (RuntimeException ex) {
+            System.out.println(&quot;RuntimeException&quot;);
+        } catch (Exception ex) {
+            System.out.println(&quot;Exception&quot;);
+        }
+    }
+}    
+</code></pre>
+<p>[&#x2F;collapse]</p>
+<p>[collapse title&#x3D;”第二题”]</p>
+<pre><code class="java">public class Ex5_2 {
+    // IllegalArgumentException异常的声明
+    static double cal(double a, double b) throws IllegalArgumentException {
+        double value;
+        if (b == 0) {
+            // 抛出IllegalArgumentException异常，并定义消息字符串为“除数不能为0”
+            throw new IllegalArgumentException(&quot;除数不能为0&quot;);
+        } else {
+            value = a / b;
+            if (value &lt; 0) {
+                // 抛出IllegalArgumentException异常，并定义消息字符串为“运算结果小于0”
+                throw new IllegalArgumentException(&quot;运算结果小于0&quot;);
+            }
+        }
+        return value;
+    }
+
+    public static void main(String[] args) {
+        double result;
+        try {
+            double a = Double.parseDouble(args[0]);
+            double b = Double.parseDouble(args[1]);
+            result = cal(a, b);
+            System.out.println(&quot;运算结果是: &quot; + result);
+        } 
+        // 处理IllegalArgumentException异常
+        catch (IllegalArgumentException e) {
+            System.out.println(&quot;异常说明: &quot; + e.getMessage());
+        }
+    }
+}    
+</code></pre>
+<p>[&#x2F;collapse]</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -242,6 +289,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

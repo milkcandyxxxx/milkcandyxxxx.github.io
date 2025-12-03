@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>标签 | 奶糖の小窝</title>
+    <title>攻防世界\\Reversing-x64Elf-100 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,67 +154,94 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>攻防世界\\Reversing-x64Elf-100</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/11/19
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                未标记
+                未来与梦
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                安全
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #03a9f4">
+                    未标记
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                原神
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                拾枝杂谈
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E9%9B%AA%E6%99%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                雪景
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>Reversingx64Elf100 c if ( (unsigned int)sub_4006FD(s) ) 需要走一遍sub_4006FD函数 函数内容 c __int64 __fastcall sub_4006FD(__int64 a1) { int i; &#x2F;&#x2F; [rsp+14h] [rbp24h] _QWORD v3[4]; &#x2F;&#x2F; [rsp+18h]…</p>
+<span id="more"></span>
+
+<h1 id="Reversing-x64Elf-100"><a href="#Reversing-x64Elf-100" class="headerlink" title="Reversing-x64Elf-100"></a>Reversing-x64Elf-100</h1><p><img src="D:\Programme\Code\python\Reverse\攻防世界\Reversing-x64Elf-100\Reversing-x64Elf-100.assets\image-20251119160638848.png" alt="image-20251119160638848"></p>
+<pre><code class="c">  if ( (unsigned int)sub_4006FD(s) )
+</code></pre>
+<p>需要走一遍sub_4006FD函数</p>
+<p>函数内容</p>
+<pre><code class="c">__int64 __fastcall sub_4006FD(__int64 a1)
+{
+  int i; // [rsp+14h] [rbp-24h]
+  _QWORD v3[4]; // [rsp+18h] [rbp-20h]
+
+  v3[0] = &quot;Dufhbmf&quot;;
+  v3[1] = &quot;pG`imos&quot;;
+  v3[2] = &quot;ewUglpt&quot;;
+  for ( i = 0; i &lt;= 11; ++i )
+  {
+    if ( *(char *)(v3[i % 3] + 2 * (i / 3)) - *(char *)(i + a1) != 1 )
+      return 1LL;
+  }
+  return 0LL;
+}
+</code></pre>
+<p>这里我们已知结果和条件去求输入的a1</p>
+<pre><code class="python">
+def main():
+    v0 = &quot;Dufhbmf&quot;
+    v1 = &quot;pG`imos&quot;
+    v2 = &quot;ewUglpt&quot;
+    v3 = [v0, v1, v2] #数组
+    out = &quot;&quot;
+    for i in range(12):
+        out+= chr(ord(v3[i%3][2*int(i/3)])-1)#将每一个满足的a1存储起来
+
+    print(out)
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>Code_Talkersjie’chu</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -242,6 +273,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

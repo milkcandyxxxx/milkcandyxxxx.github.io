@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8" />
+    <title>秋（红枫，红叶和鸡爪槭的区别） | 奶糖の小窝</title>
+    <meta name="author" content="milkcandy" />
+    <meta name="description" content="拾枝杂谈" />
+    <meta name="keywords" content="milkcnandy" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>正在加载喵~</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>奶糖の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;奶糖の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>秋（红枫，红叶和鸡爪槭的区别）</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/29
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                拾枝杂谈
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="color: #00bcd4">
+                    拾枝杂谈
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>前言 深秋了，按照天文学来说的话确实是深秋哩（123月为冬季）不过要是按照老祖宗的二十四节气来说的话，只要到了立冬就带表已经步入了冬天。秋天嘛，虽然算是在南方但是落叶的树也不少，许多植物的叶子都慢慢变黄，而变红的，恰恰吸引了我，嘿嘿，于是我便把所有变红的叶子全部搞了一些（不过一开始以为都是枫叶但却不是）(´｡✪ω✪｡｀) 红叶最多情一语寄相思 红枫 红枫便是…</p>
+<span id="more"></span>
+
+<blockquote>
+<p><strong>前言</strong></p>
+</blockquote>
+<p>深秋了，按照天文学来说的话确实是深秋哩（12-3月为冬季）不过要是按照老祖宗的二十四节气来说的话，只要到了立冬就带表已经步入了冬天。秋天嘛，虽然算是在南方但是落叶的树也不少，许多植物的叶子都慢慢变黄，而变红的，恰恰吸引了我，嘿嘿，于是我便把所有变红的叶子全部搞了一些（不过一开始以为都是枫叶但却不是）(´｡✪ω✪｡｀)<br><strong>红叶最多情一语寄相思</strong></p>
+<blockquote>
+<p>红枫</p>
+</blockquote>
+<p>红枫便是我以为我所采摘叶子的树木<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BA%A2%E6%9E%AB/1336">红枫百科</a><br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/3029662926.jpg" alt="红枫1"><br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/3926983668.jpg" alt="红枫2"><br>(σ′▽‵)′▽‵)σ这两个就是典型的红枫，当然也是我觉得采摘的叶片里最好看的，小小的枫叶呈现着精致的五角状，由中心向外的红色慢慢加深，叶尖稍窄，叶边带有锯齿状。<br>今天的风也不小，徐徐微风。枫叶经不住岁月的洗礼，渐渐的从枝头飘落，在空中摇曳。枫叶不同于其他类圆形的树叶，五个小巧的叶尖身披一身中国红，恰似穿着盛装的舞女，婀娜的变转身姿，在飘落于地的几秒内，完成一场华丽的<em>表演</em></p>
+<p><strong>淡烟枫叶落，细雨蓼花时</strong></p>
+<blockquote>
+<p>鸡爪槭qi第四声！！！</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%B8%A1%E7%88%AA%E6%A7%AD/805917">鸡爪槭百科</a><br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/3583015676.jpg" alt="鸡爪槭1"><br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/918295889.jpg" alt="鸡爪槭2"><br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/242474366.jpg" alt="鸡爪槭3"><br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/3418122849.jpg" alt="鸡爪槭4"><br>鸡爪槭与枫叶其实差距不大，在这也是我搞错了那么多的原因啦！（绝对不是因为才疏学浅！）๑乛v乛๑嘿嘿<br>相比起红枫，鸡爪槭的叶尖便没有红枫工整，而且一般为7片（奶糖觉得五片显得更加工整，七片反倒是凌乱了些）ԅ(¯ㅂ¯ԅ)<br>这里本来想着也加一句描写鸡爪槭的古诗，但是其实红枫就是鸡爪槭（在下文会详细说一下）<br>所以我觉得古人诗中的枫，也不乏其实是鸡爪槭呢(๑&gt;؂&lt;๑）（我猜的）</p>
+<blockquote>
+<p>红叶</p>
+</blockquote>
+<p>红叶指的是枫树、槭树、黄栌等在秋天叶子变红的树，所以上述的鸡爪槭和红枫都属于红叶，广义上只要说秋季叶片变红色树都可以称之为红叶。</p>
+<p><em>枫香树</em><br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/3797228628.jpg" alt="枫香树"><br><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8C%97%E7%BE%8E%E6%9E%AB%E9%A6%99/7072678?_swebfr=220011">北美枫香百科</a>枫香因为形似枫树而且带有香味，顾取名为枫香（还蛮纯朴的），我所拍的叶片还没红透，难受(；一_一)，下图是在网上找到的枫香<br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/4278153219.jpg" alt="红透了的枫香"></p>
+<p><em>北美红栋</em><br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/609288714.jpg" alt="北美红栋"><br><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8C%97%E7%BE%8E%E7%BA%A2%E6%A0%8E/6110854?fromtitle=%E7%BA%A2%E6%A7%B2%E6%A0%8E&fromid=9919203">北美红栋百科</a>这个拍的就有点一言难尽了，因为北美红栋很高，下面的叶片又多数，像这样枯萎了，上面的又够不着，哭，π_π<br><img src="http://www.milkcandy.shop/usr/uploads/2023/11/3992994410.jpg" alt="依旧是网上找的...."></p>
+<blockquote>
+<p><strong>红枫与鸡爪槭的区别</strong></p>
+</blockquote>
+<p>重要的事情说三遍！<br>红枫属于鸡爪槭！红枫属于鸡爪槭！红枫属于鸡爪槭！(;｀O´)o<br>红枫是鸡爪槭比较有名的变种<br><strong>1.叶片</strong><br>鸡爪槭通常为七片，且叶尖较尖（所以我觉得不好看的原因啦）(〃ﾉωﾉ)<br>红枫一般为5-7片，为五片居多（这样长的才工整嘛）(︶.̮︶✽)，且叶尖较为圆滑<br><strong>2.颜色</strong><br>鸡爪槭春秋是绿色哒！只有秋季是红色的。而红枫春夏秋都是红哒！（这个应该就是他是比较出名的变种的原因吧）（｡ò ∀ ó｡）<br>什么？你问我叶片冬天是什么颜色的？大笨蛋！冬天会落叶的啦！！！d(ŐдŐ๑)<br><strong>枝干</strong><br>鸡爪槭当年生的枝干颜色为紫色或淡紫绿色，多年生枝颜色为淡灰紫色或深紫色。而红枫的枝条比较细长光滑，颜色偏紫红色（百度是这么说的，但是我没大看出来…笨）⊙ω⊙</p>
+<blockquote>
+<p><strong>三者的区别——红枫，红叶，鸡爪槭</strong></p>
+</blockquote>
+<p>其实很简单，很简单，很简单。三者是互相包含的。<br><em>红叶包含鸡爪槭，鸡爪槭包含红枫</em><br>那我们常说枫叶枫叶为什么我没提到枫树呢，因为本次讲的都是会变红的叶子，而枫树和红枫都属于枫叶，但是红枫特指叶子会变红的枫树。</p>
+<blockquote>
+<p><strong>总结</strong></p>
+</blockquote>
+<p>其实三者就是互相包含的区别啦(ﾟOﾟ)<br>秋意渐浓，这些叶片倒没有发黄，而是渐渐变红，无数鲜红的叶片叠加起来，似花朵般在秋天中绽放。</p>
+<p><em>聊题一片叶，寄与有情人</em>，一片片鲜红的叶子，也宛若凛冬将至，而我们依然炽热的心。٩(๑´3｀๑)۶</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 奶糖の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;milkcandy
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

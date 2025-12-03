@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>标签 | 奶糖の小窝</title>
+    <title>week82 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,67 +154,126 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>week82</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/4/19
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                未标记
+                未来与梦
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                安全
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #03a9f4">
+                    未标记
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                原神
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                拾枝杂谈
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E9%9B%AA%E6%99%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                雪景
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>java import javax.swing.; import java.awt.; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; public class LoginInterface extends JFrame { private JTextField…</p>
+<span id="more"></span>
+
+<pre><code class="java">import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class LoginInterface extends JFrame {
+    private JTextField usernameField;
+    private JPasswordField passwordField;
+
+    public LoginInterface() {
+        // 设置窗口标题
+        setTitle(&quot;登录界面&quot;);
+        // 设置窗口大小
+        setSize(300, 200);
+        // 设置窗口关闭时的操作
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // 设置窗口布局
+        setLayout(new GridLayout(3, 2));
+
+        // 用户名标签
+        JLabel usernameLabel = new JLabel(&quot;用户名:&quot;);
+        add(usernameLabel);
+
+        // 用户名输入框
+        usernameField = new JTextField();
+        add(usernameField);
+
+        // 密码标签
+        JLabel passwordLabel = new JLabel(&quot;密码:&quot;);
+        add(passwordLabel);
+
+        // 密码输入框
+        passwordField = new JPasswordField();
+        add(passwordField);
+
+        // 登录按钮
+        JButton loginButton = new JButton(&quot;登录&quot;);
+        add(loginButton);
+
+        // 为登录按钮添加点击事件监听器
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String username = usernameField.getText();
+                String password = new String(passwordField.getPassword());
+
+                // 这里简单假设用户名是 &quot;admin&quot;，密码是 &quot;123456&quot;
+                if (&quot;admin&quot;.equals(username) &amp;&amp; &quot;123456&quot;.equals(password)) {
+                    JOptionPane.showMessageDialog(null, &quot;登录成功！&quot;, &quot;提示&quot;, JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, &quot;用户名或密码错误！&quot;, &quot;错误&quot;, JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        // 在事件调度线程中创建和显示 GUI
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                LoginInterface loginFrame = new LoginInterface();
+                // 使窗口可见
+                loginFrame.setVisible(true);
+            }
+        });
+    }
+}    
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -242,6 +305,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

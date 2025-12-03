@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>标签 | 奶糖の小窝</title>
+    <title>week5 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,67 +154,115 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>week5</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/21
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                未标记
+                未来与梦
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                安全
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">
+                    未标记
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                原神
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                拾枝杂谈
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E9%9B%AA%E6%99%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                雪景
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>[collapse title”第一题”] java public class Ex4_1 { String str; public Ex4_1(String str) { this.str str; } int getlength() { return str.length(); } public static void main(String[] arg…</p>
+<span id="more"></span>
+
+<p>[collapse title&#x3D;”第一题”]</p>
+<pre><code class="java">public class Ex4_1 {
+    String str;
+    
+    public Ex4_1(String str) {
+        this.str = str;
+    }
+    
+    int getlength() {
+        return str.length();
+    }
+
+    public static void main(String[] args) {
+        Ex4_1 test = new Ex4_1(&quot;Hello&quot;);
+        System.out.println(&quot;字符串是:&quot; + test.str + &quot; 长度为：&quot; + test.getlength());
+    }
+}    
+</code></pre>
+<p>[&#x2F;collapse]</p>
+<p>[collapse title&#x3D;”第二题”]</p>
+<pre><code class="java">import java.util.*;
+import java.io.*;
+
+public class Ex4_2 {
+    public static void main(String[] args) {
+        String str1 = new String();
+        String str2 = new String();
+        char ch;
+        Scanner reader = new Scanner(System.in);
+        System.out.println(&quot;输入字符串：&quot;);
+        str1 = reader.nextLine();  //输入字符串
+        System.out.println(&quot;输入要删除的字符：&quot;);
+        str2 = reader.nextLine();  //输入穿要删除的字符 ，以字符串的形式输入
+        ch = str2.charAt(0);   //将字符串str2转换为字符
+        str1 = str1.replace(ch, &#39; &#39;);  //用空格替代指定字符
+        System.out.println(&quot;删除字符后的字符串  &quot; + str1);
+    }
+}
+</code></pre>
+<p>[&#x2F;collapse]</p>
+<p>[collapse title&#x3D;”第三题”]</p>
+<pre><code class="java">class Ex4_3 {
+    public static void main(String[] args) {
+        String s = &quot;cat223dog456nice25ttt98&quot;;
+        boolean old_tag = false;  // 表示开始不是数字
+        boolean tag = false;
+        int n = 0; // 数字组计数
+        for (int i = 0; i &lt; s.length(); i++) {
+            char c = s.charAt(i);
+            tag = c &gt;= &#39;0&#39; &amp;&amp; c &lt;= &#39;9&#39;;  // 是否为数字
+            if (!old_tag &amp;&amp; tag) n++;
+            old_tag = tag;
+        }
+        System.out.print(&quot;共有数字段 &quot; + n + &quot; 个&quot;);
+    }
+}
+</code></pre>
+<p>[&#x2F;collapse]</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -242,6 +294,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

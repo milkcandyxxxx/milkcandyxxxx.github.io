@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8" />
+    <title>week82 | 奶糖の小窝</title>
+    <meta name="author" content="milkcandy" />
+    <meta name="description" content="拾枝杂谈" />
+    <meta name="keywords" content="milkcnandy" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>正在加载喵~</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>奶糖の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;奶糖の小窝</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>week82</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/4/13
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                未来与梦
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">
+                    未标记
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>[collapse title”无注释版，点击打开”] java import javax.swing.; import java.awt.; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; public class 登录界面 extends JFrame { …</p>
+<span id="more"></span>
+
+<p>[collapse title&#x3D;”无注释版，点击打开”]</p>
+<pre><code class="java">import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class 登录界面 extends JFrame {
+    private JTextField 用户名输入框;
+    private JPasswordField 密码输入框;
+
+    public 登录界面() {
+        setTitle(&quot;登录界面&quot;);
+        setSize(600, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
+
+        JLabel 用户名标签 = new JLabel(&quot;用户名:&quot;);
+        add(用户名标签);
+        用户名输入框 = new JTextField(15);
+        add(用户名输入框);
+
+        JLabel 密码标签 = new JLabel(&quot;密码:&quot;);
+        add(密码标签);
+        密码输入框 = new JPasswordField(15);
+        add(密码输入框);
+
+        JButton 登录按钮 = new JButton(&quot;登录&quot;);
+        add(登录按钮);
+
+        登录按钮.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String 用户名 = 用户名输入框.getText();
+                String 密码 = new String(密码输入框.getPassword());
+
+                String 正确用户名 = &quot;1&quot;;
+                String 正确密码 = &quot;1&quot;;
+
+                if (用户名.equals(正确用户名) &amp;&amp; 密码.equals(正确密码)) {
+                    JOptionPane.showMessageDialog(
+                            登录界面.this,
+                            &quot;登录成功！&quot;,
+                            &quot;提示&quot;,
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                } else {
+                    JOptionPane.showMessageDialog(
+                            登录界面.this,
+                            &quot;用户名或密码错误！&quot;,
+                            &quot;错误&quot;,
+                            JOptionPane.ERROR_MESSAGE
+                    );
+                }
+            }
+        });
+
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new 登录界面();
+    }
+}
+</code></pre>
+<p>[&#x2F;collapse]</p>
+<p>[collapse title&#x3D;”详细注释版”]</p>
+<pre><code class="java">// 导入Swing和AWT相关包
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+/**
+ * 登录界面类，继承自JFrame
+ * 实现了一个简单的用户名密码登录窗口
+ */
+public class 登录界面 extends JFrame {
+    // 声明组件
+    private JTextField 用户名输入框;  // 用户名输入文本框
+    private JPasswordField 密码输入框; // 密码输入框（专用密码组件）JPasswordField写出来不显示
+
+    // 构造方法
+    public 登录界面() {
+        // 窗口基础设置
+        setTitle(&quot;登录界面&quot;);      // 设置窗口标题
+        setSize(600, 200);        // 设置窗口尺寸（宽600像素，高200像素）
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 设置关闭时退出程序
+        setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20)); // 使用流式布局，居中对齐，水平垂直间距20像素
+
+        // 用户名组件
+        JLabel 用户名标签 = new JLabel(&quot;用户名:&quot;); // 创建标签
+        add(用户名标签);                          // 将标签添加到窗口
+
+        用户名输入框 = new JTextField(15);       // 创建宽度为15列的文本框
+        add(用户名输入框);                        // 添加文本框到窗口
+
+        // 密码组件
+        JLabel 密码标签 = new JLabel(&quot;密码:&quot;);    // 密码标签
+        add(密码标签);
+
+        密码输入框 = new JPasswordField(15);     // 创建密码输入框（输入内容会显示为*号）
+        add(密码输入框);
+
+        // 登录按钮
+        JButton 登录按钮 = new JButton(&quot;登录&quot;);   // 创建登录按钮
+        add(登录按钮);
+
+        // 为登录按钮添加事件监听器
+        登录按钮.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 获取输入的用户名和密码
+                String 用户名 = 用户名输入框.getText();
+                String 密码 = new String(密码输入框.getPassword()); // 密码字段需要转换为字符串
+
+                // 设置账号密码
+                String 正确用户名 = &quot;1&quot;;
+                String 正确密码 = &quot;1&quot;;
+
+                // 验证凭证
+                if (用户名.equals(正确用户名) &amp;&amp; 密码.equals(正确密码)) {//equals比较两个对象是否相等
+                    // 登录成功提示（信息类型对话框）
+                    JOptionPane.showMessageDialog(
+                            登录界面.this,
+                            &quot;登录成功！&quot;,
+                            &quot;提示&quot;,
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                } else {
+                    // 登录失败提示（错误类型对话框）
+                    JOptionPane.showMessageDialog(
+                            登录界面.this,
+                            &quot;用户名或密码错误！&quot;,
+                            &quot;错误&quot;,
+                            JOptionPane.ERROR_MESSAGE
+                    );
+                }
+            }
+        });
+
+        // 窗口显示设置
+        setLocationRelativeTo(null); // 居中显示窗口
+        setVisible(true);            // 设置窗口可见
+    }
+
+    // 程序入口
+    public static void main(String[] args) {
+
+                new 登录界面(); // 创建登录界面实例
+
+    }
+}
+</code></pre>
+<p>[&#x2F;collapse]</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 奶糖の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;milkcandy
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

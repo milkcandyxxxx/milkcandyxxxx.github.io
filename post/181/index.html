@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>标签 | 奶糖の小窝</title>
+    <title>week9 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,67 +154,128 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>week9</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/4/19
+        </span>
         
-        
-        
-        <span>
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="background: #03a9f4">
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                未标记
+                未来与梦
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                安全
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ff7d73">
+                    未标记
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%8E%9F%E7%A5%9E/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                原神
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                拾枝杂谈
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E9%9B%AA%E6%99%AF/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                雪景
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>[collapse title”第一题”] java import java.awt.event.; import javax.swing.; import java.awt.; public class Ex8_1 extends JFrame implements WindowListener { public Ex8_1() { setLayout(n…</p>
+<span id="more"></span>
+
+<p>[collapse title&#x3D;”第一题”]</p>
+<pre><code class="java">import java.awt.event.*;
+import javax.swing.*;
+import java.awt.*;
+
+public class Ex8_1 extends JFrame implements WindowListener {
+    public Ex8_1() {
+        setLayout(new FlowLayout());
+        setBounds(0, 0, 200, 200);
+        setVisible(true);
+        this.addWindowListener(this);
+    }
+
+    public static void main(String args[]) {
+        new Ex8_1();
+    }
+
+    public void windowClosing(WindowEvent e) {
+        System.out.println(&quot;The window closing &quot;);
+        System.exit(0);
+    }
+
+    public void windowOpened(WindowEvent e) {
+        System.out.println(&quot;The window opened&quot;);
+    }
+
+    public void windowDeactivated(WindowEvent e) {
+        System.out.println(&quot;The window deactivated&quot;);
+    }
+
+    public void windowActivated(WindowEvent e) {
+        System.out.println(&quot;The window activated&quot;);
+    }
+    public void windowIconified(WindowEvent e) {}
+    public void windowDeiconified(WindowEvent e) {}
+    public void windowClosed(WindowEvent e) {}
+}
+</code></pre>
+<p>[&#x2F;collapse]</p>
+<p>[collapse title&#x3D;”第二题”]</p>
+<pre><code class="java">import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Ex8_2 extends JFrame implements ActionListener {
+    static Ex8_2 frm = new Ex8_2();
+    static JButton btn1 = new JButton(&quot;Yellow&quot;);
+    static JButton btn2 = new JButton(&quot;Green&quot;);
+
+    public static void main(String args[]) {
+        btn1.addActionListener(frm);
+        btn2.addActionListener(frm);
+        frm.setTitle(&quot;Action Event&quot;);
+        frm.setLayout(new FlowLayout(FlowLayout.CENTER));
+        frm.add(btn1);
+        frm.add(btn2);
+        frm.setSize(200, 150);
+        frm.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        Object btn = e.getSource();
+        if (btn == btn1) {
+            frm.getContentPane().setBackground(Color.YELLOW);
+        } else if (btn == btn2) {
+            frm.getContentPane().setBackground(Color.GREEN);
+        }
+    }
+}
+</code></pre>
+<p>[&#x2F;collapse]</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -242,6 +307,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
