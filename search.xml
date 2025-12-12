@@ -2401,7 +2401,14 @@ if __name__ == &quot;__main__&quot;:
   <entry>
     <title>编程字体推荐</title>
     <url>/2025/12/12/%E7%BC%96%E7%A8%8B%E5%AD%97%E4%BD%93%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h1><span id="maple-font">Maple-font</span></h1><p>一开始一直用的是<a href="https://www.jetbrains.com/lp/mono/">jetbrains mono</a>，就是jetbrains自家的字体，也不错</p>
+    <content><![CDATA[<h1><span id="maple-font">Maple-font</span></h1><p>一开始一直用的是<a href="https://www.jetbrains.com/lp/mono/">jetbrains mono</a>，就是jetbrains自家的字体，也不错（等宽，连写）<br>但是就是感觉很，，，平平无奇？而且还不支持中文，（！！！！非常重要的，导致中文只能用其他的字体，多多少少很感觉割裂）</p>
+<img src="/images/编程字体推荐.assets/Snipaste_2025-12-12_16-50-08.png" alt="Snipaste_2025-12-12_16-50-08" style="zoom:50%;">
+
+<p>最近刷github突然发现了个宝藏字体</p>
+<p>当当当当~！<a href="https://github.com/subframe7536/maple-font">maple-font</a></p>
+<img src="/images/编程字体推荐.assets/Snipaste_2025-12-12_16-52-22.png" alt="Snipaste_2025-12-12_16-52-22" style="zoom:50%;">
+
+<p>个性十足，并且支持中文！！！！</p>
 ]]></content>
       <categories>
         <category>未来与梦</category>
