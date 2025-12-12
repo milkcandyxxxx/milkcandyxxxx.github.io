@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>奶糖の小窝</title>
+    <title>hexo指令使用指南 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -42,7 +42,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -152,101 +154,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>奶糖の小窝</h1>
-                <h3>milkcandy’s home</h3>
-                <h5>拾枝杂谈</h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>hexo指令使用指南</h1>
     </div>
-</div>
-<div
-    id="home-posts-wrap"
-    ref="homePostsWrap"
-    true
->
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/post/150/">
-        <h2 class="post-title">typechon美化（主题通用）</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/1/13
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>前言 奶糖一开始其实是想凭借自己的力量去独立写出属于自己的主题，但是嘛… 事与愿违嘛，因为学业以及奶糖的学习能力比较差之类的，自己写主题的目标显得有些遥远（之前所说的开始学习还在继续啦，只不过内容太多，如果写出来就太长了）。所以奶糖决定对于自己所用的主题进行魔改。（本主题取自季悠然大佬的<a target="_blank" rel="noopener" href="https://github.com/youranreus/G">G主题</a>） 那么话不多说，开始吧d(￣▽￣)b 正文 因为奶…</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/post/150/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/12/12/hexo%E6%8C%87%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
-        <h2 class="post-title">hexo指令使用指南</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -254,12 +166,35 @@
             2025/12/12
         </span>
         
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                未来与梦
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%91%BD%E4%BB%A4/" style="color: #00a596">
+                    命令
+                </a>
+            </span>
+            
+        </span>
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="Hexo-命令完全手册：从入门到精通的命令行指南"><a href="#Hexo-命令完全手册：从入门到精通的命令行指南" class="headerlink" title="Hexo 命令完全手册：从入门到精通的命令行指南"></a>Hexo 命令完全手册：从入门到精通的命令行指南</h1><p>**</p>
+    
+    <div class="content" v-pre>
+        <h1 id="Hexo-命令完全手册：从入门到精通的命令行指南"><a href="#Hexo-命令完全手册：从入门到精通的命令行指南" class="headerlink" title="Hexo 命令完全手册：从入门到精通的命令行指南"></a>Hexo 命令完全手册：从入门到精通的命令行指南</h1><p>**</p>
 <p>Hexo 作为一款高效的静态博客框架，其所有核心操作都可以通过命令行完成。本文将系统梳理 Hexo 从安装、初始化到部署的全流程命令，涵盖基础操作、内容管理、配置优化、插件使用等场景，帮助你快速掌握 Hexo 命令行工具的使用技巧，提升博客搭建与维护效率。</p>
 <h2 id="一、环境准备与-Hexo-安装"><a href="#一、环境准备与-Hexo-安装" class="headerlink" title="一、环境准备与 Hexo 安装"></a>一、环境准备与 Hexo 安装</h2><p>在使用 Hexo 命令前，需先完成环境配置与框架安装。Hexo 基于 Node.js 运行，因此必须先安装 Node.js（建议版本 ≥ 14.0.0）和 Git。</p>
 <h3 id="1-1-检查依赖环境"><a href="#1-1-检查依赖环境" class="headerlink" title="1.1 检查依赖环境"></a>1.1 检查依赖环境</h3><p>安装前先验证 Node.js 和 Git 是否已正确安装：</p>
@@ -490,457 +425,13 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
 <p>解决：检查 _config.yml 中 deploy.branch 配置，并重执行 hexo d -g。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Hexo 命令行工具是博客开发与维护的核心，掌握本文梳理的命令可覆盖从环境搭建到部署的全流程需求。建议根据实际使用场景，将常用命令（如一键部署、本地预览）设置别名，结合插件扩展功能，进一步提升效率。若需深入了解某一命令或插件，可参考 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">Hexo 官方文档</a> 或对应的插件说明。</p>
 
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%91%BD%E4%BB%A4/" style="color: #ff7d73">命令</a>
-        </span>
-        
-    </div>
-    <a href="/2025/12/12/hexo%E6%8C%87%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/12/12/hexo%E6%8C%87%E4%BB%A4%E6%8C%87%E5%8D%97/">
-        <h2 class="post-title"></h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/12/12
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2025/12/12/hexo%E6%8C%87%E4%BB%A4%E6%8C%87%E5%8D%97/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/12/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87-Hexo-%E6%96%87%E7%AB%A0/">
-        <h2 class="post-title">我的第一篇 Hexo 文章</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/12/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>这是一个普通段落，可以 <strong>加粗</strong>、<em>斜体</em>、<del>删除线</del>。</p>
-<blockquote>
-<p>这是引用块（用于强调、引用文字）。</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #03a9f4">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/2025/12/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87-Hexo-%E6%96%87%E7%AB%A0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/post/188/">
-        <h2 class="post-title">攻防世界\\Reversing-x64Elf-100</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/11/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Reversingx64Elf100 c if ( (unsigned int)sub_4006FD(s) ) 需要走一遍sub_4006FD函数 函数内容 c __int64 __fastcall sub_4006FD(__int64 a1) { int i; &#x2F;&#x2F; [rsp+14h] [rbp24h] _QWORD v3[4]; &#x2F;&#x2F; [rsp+18h]…</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/post/188/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/post/186/">
-        <h2 class="post-title">攻防世界666</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/11/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>666 直接看到flag，不过当然是假的，输入的是v5,然后经过encode c int __fastcall encode(const char a1, __int64 a2) { _BYTE v3[104]; &#x2F;&#x2F; [rsp+10h] [rbp70h] int v4; &#x2F;&#x2F; [rsp+78h] [rbp8h] int i; &#x2F;&#x2F; [rsp+7Ch] [r…</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ffa2c4">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/post/186/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/post/187/">
-        <h2 class="post-title">攻防世界666</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/11/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>666 c int __fastcall main(int argc, const char argv, const char envp) { char s[240]; &#x2F;&#x2F; [rsp+0h] [rbp1E0h] BYREF char v5[240]; &#x2F;&#x2F; [rsp+F0h] [rbpF0h] BYREF memset(s, 0, 0x1EuLL); pr…</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/post/187/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/post/185/">
-        <h2 class="post-title">week82</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/4/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>java import javax.swing.; import java.awt.; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; public class LoginInterface extends JFrame { private JTextField…</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ffa2c4">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/post/185/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/post/181/">
-        <h2 class="post-title">week9</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/4/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>[collapse title”第一题”] java import java.awt.event.; import javax.swing.; import java.awt.; public class Ex8_1 extends JFrame implements WindowListener { public Ex8_1() { setLayout(n…</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #03a9f4">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/post/181/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/post/180/">
-        <h2 class="post-title">week82</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/4/13
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>[collapse title”无注释版，点击打开”] java import javax.swing.; import java.awt.; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; public class 登录界面 extends JFrame { …</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/post/180/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    
-    <span class="current">1</span>
-    
-    <a class="page-num" href="/page/2">
-        2
-    </a>
-    
-    
-    <a class="page-num" href="/page/3">
-        3
-    </a>
-    
-    
-    <span class="page-omit">...</span>
-    <a class="page-num" href="/page/5">5</a>
-    
-    
-    <a class="page-num" href="/page/2/">
-        <i class="fa-solid fa-caret-right fa-fw"></i>
-    </a>
-    
-</div>
-
     </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">milkcandy</div>
-        <div class="description">
-            <p>拾枝杂谈</p>
-
-        </div>
-        
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a href="tencent://message/?uin=1910399844&Site=QQ联系&Menu=yes">
-                    <i
-                        class="fa-brands fa-qq fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/milkcandyxxxx">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a href="mailto:milkcandyxxxx@gmail.com">
-                    <i
-                        class="fa-solid fa-envelope fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-        </div>
-        
-        
-    </div>
-</div>
-
-    </div>
+    
+    
+    
+    
+    
     
 </div>
 
@@ -972,6 +463,12 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
