@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ffa2c4">
                     未标记
                 </a>
             </span>
@@ -197,8 +197,8 @@
         <p>前言 前些天（其实蛮久了）<a target="_blank" rel="noopener" href="https://www.hao-ming.top/">溟狗</a>大佬对于奶糖的博客提出了疑问： 奶糖的博客看不到头像（原因是头像服务Gravatar在境内是封锁的）但是奶糖的博客ip解析地址在境外，但是却不能境外访问。 原因：奶糖的web托管服务是那种仅为学习提供的（价格低），为了防止有人搭建恶意网站所以管理员封锁了外网访问。 于是，奶糖也是在看到<a target="_blank" rel="noopener" href="https://www.cpolar.com/">cpolar</a>的交流群内，…</p>
 <span id="more"></span>
 
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前些天（其实蛮久了）<a target="_blank" rel="noopener" href="https://www.hao-ming.top/">溟狗</a>大佬对于奶糖的博客提出了疑问：<br>奶糖的博客看不到头像（原因是头像服务Gravatar在境内是封锁的）但是奶糖的博客ip解析地址在境外，但是却不能境外访问。<br>原因：奶糖的web托管服务是那种仅为学习提供的（价格低），为了防止有人搭建恶意网站所以管理员封锁了外网访问。<br>于是，奶糖也是在看到<a target="_blank" rel="noopener" href="https://www.cpolar.com/">cpolar</a>的交流群内，有人利用本地服务器+内网穿透的组合搭建了基于<br>Apache和WordPress的博客。奶糖无法做到电脑常开，但是突然想起来自己有一个树莓派3b，也许可也用来搭建？（不过因为板子性能差使用选择了nginx）<br>开工！！！！！！！！</p>
-<h2 id="准备工作（如果是云服务器，请直接跳过此步骤）"><a href="#准备工作（如果是云服务器，请直接跳过此步骤）" class="headerlink" title="准备工作（如果是云服务器，请直接跳过此步骤）"></a>准备工作（如果是云服务器，请直接跳过此步骤）</h2><p>[collapse title&#x3D;”准备工作”]<br>配置树莓派的方法有很多（有很多种有无屏幕，是否为官方的系统等等）这里选用奶糖认为最最最简单的来进行d&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;(￣▽￣*)b</p>
+<h2><span id="前言">前言</span><a href="#前言" class="header-anchor">#</a></h2><p>前些天（其实蛮久了）<a target="_blank" rel="noopener" href="https://www.hao-ming.top/">溟狗</a>大佬对于奶糖的博客提出了疑问：<br>奶糖的博客看不到头像（原因是头像服务Gravatar在境内是封锁的）但是奶糖的博客ip解析地址在境外，但是却不能境外访问。<br>原因：奶糖的web托管服务是那种仅为学习提供的（价格低），为了防止有人搭建恶意网站所以管理员封锁了外网访问。<br>于是，奶糖也是在看到<a target="_blank" rel="noopener" href="https://www.cpolar.com/">cpolar</a>的交流群内，有人利用本地服务器+内网穿透的组合搭建了基于<br>Apache和WordPress的博客。奶糖无法做到电脑常开，但是突然想起来自己有一个树莓派3b，也许可也用来搭建？（不过因为板子性能差使用选择了nginx）<br>开工！！！！！！！！</p>
+<h2><span id="准备工作如果是云服务器请直接跳过此步骤">准备工作（如果是云服务器，请直接跳过此步骤）</span><a href="#准备工作如果是云服务器请直接跳过此步骤" class="header-anchor">#</a></h2><p>[collapse title&#x3D;”准备工作”]<br>配置树莓派的方法有很多（有很多种有无屏幕，是否为官方的系统等等）这里选用奶糖认为最最最简单的来进行d&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;(￣▽￣*)b</p>
 <ol>
 <li><p>首先进入树莓派官网下载树莓派官方的刷系统工具<a target="_blank" rel="noopener" href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> 不过可能需要魔法<del>（就请自己解决啦</del>）</p>
 </li>
@@ -244,7 +244,7 @@ sudo apt-get install language-pack-zh-hans
 sudo update-locale LANG=zh_CN.UTF-8
 </code></pre>
 <p>然后sudo reboot重启即可<br>but，虽然奶糖英语不好，但是还是要尽量看一些英文的，如果遇到不支持中文的还能自己看看不是嘛~<br>[&#x2F;collapse]</p>
-<h2 id="安装LNMP环境"><a href="#安装LNMP环境" class="headerlink" title="安装LNMP环境"></a>安装LNMP环境</h2><ol>
+<h2><span id="安装lnmp环境">安装LNMP环境</span><a href="#安装lnmp环境" class="header-anchor">#</a></h2><ol>
 <li><p>安装nginx</p>
 <p>安装依赖</p>
 <pre><code class="linux">sudo apt install -y gcc zlib1g-dev libpcre3 libpcre3-dev openssl libssl-dev
@@ -283,7 +283,7 @@ sudo service nginx start
 </code></pre>
 <p>location &#x2F; {<br>index  index.html index.htm index.php default.html default.htm default.php;<br>if (-f $request_filename&#x2F;index.html){<br>    rewrite (.<em>) $1&#x2F;index.html break;<br>}<br>if (-f $request_filename&#x2F;index.php){<br>    rewrite (.</em>) $1&#x2F;index.php;<br>}<br>if (!-f $request_filename){<br>    rewrite (.*) &#x2F;index.php;<br>}<br>}</p>
 <p>location <del>.php(/.<em>)</em>$ {<br>fastcgi_pass unix:&#x2F;run&#x2F;php&#x2F;php这里是对应的php版本-fpm.sock;<br>#fastcgi_pass 127.0.0.1:9000;<br>fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;<br>include fastcgi_params;<br>}<br>    <code>    保存退出     完成后重启nginx和php-fpm                </code>linux<br>sudo &#x2F;etc&#x2F;init.d&#x2F;nginx restart<br>sudo &#x2F;etc&#x2F;init.d&#x2F;php这里是对应的php版本-fpm restart<br>    &#96;&#96;&#96;<br>    完成后就有了web服务器了ε&#x3D;ε&#x3D;ε&#x3D;(</del>￣▽￣)~</p>
-<h1 id="安装mysql数据库"><a href="#安装mysql数据库" class="headerlink" title="安装mysql数据库"></a>安装mysql数据库</h1><pre><code>                       ```linux
+<h1><span id="安装mysql数据库">安装mysql数据库</span><a href="#安装mysql数据库" class="header-anchor">#</a></h1><pre><code>                       ```linux
 </code></pre>
 <p>sudo apt install -y mysql-server<br>    &#96;&#96;&#96;<br>   以root权限进入数据库，输入密码</p>
 <pre><code class="linux">mysql -u root -p
@@ -327,8 +327,8 @@ mv build/* /var/www/html
 <ol start="3">
 <li>访问ip地址即可进入安装页面<br>选择原生适配器即可，按照内容填写内容安装完成。</li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结了一些自己遇到的问题，不断更改试错qwq，搞了大半夜（；´д｀）ゞ，算是历尽坎坷惹</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39125451/article/details/84898288">https://blog.csdn.net/qq_39125451/article/details/84898288</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61578123/article/details/130906874">https://blog.csdn.net/m0_61578123/article/details/130906874</a><br><a target="_blank" rel="noopener" href="https://www.iiecho.com/archives/typecho-install.html#:~:text=Typecho%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%201%20%E5%AE%89%E8%A3%85%E6%89%80%E9%9C%80%E7%9A%84%E7%8E%AF%E5%A2%83-Nginx%E5%92%8CPHP%20Nginx%20...%202%20%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93MySQL%20sudo,7%20%E5%AE%8C%E6%88%90%E5%AE%89%E8%A3%85%20%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%AE%BF%E9%97%AE%20https%3A%2F%2Fyour_domain.com%2Finstall.php%20%E5%B9%B6%E6%8C%89%E7%85%A7%E5%AE%89%E8%A3%85%E5%90%91%E5%AF%BC%E7%9A%84%E6%8C%87%E7%A4%BA%E5%AE%8C%E6%88%90%20Typecho%20%E7%9A%84%E5%AE%89%E8%A3%85%E3%80%82%20">Nice2CU</a></p>
+<h2><span id="总结">总结</span><a href="#总结" class="header-anchor">#</a></h2><p>总结了一些自己遇到的问题，不断更改试错qwq，搞了大半夜（；´д｀）ゞ，算是历尽坎坷惹</p>
+<h2><span id="参考文献">参考文献</span><a href="#参考文献" class="header-anchor">#</a></h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39125451/article/details/84898288">https://blog.csdn.net/qq_39125451/article/details/84898288</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_61578123/article/details/130906874">https://blog.csdn.net/m0_61578123/article/details/130906874</a><br><a target="_blank" rel="noopener" href="https://www.iiecho.com/archives/typecho-install.html#:~:text=Typecho%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%201%20%E5%AE%89%E8%A3%85%E6%89%80%E9%9C%80%E7%9A%84%E7%8E%AF%E5%A2%83-Nginx%E5%92%8CPHP%20Nginx%20...%202%20%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93MySQL%20sudo,7%20%E5%AE%8C%E6%88%90%E5%AE%89%E8%A3%85%20%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%AE%BF%E9%97%AE%20https%3A%2F%2Fyour_domain.com%2Finstall.php%20%E5%B9%B6%E6%8C%89%E7%85%A7%E5%AE%89%E8%A3%85%E5%90%91%E5%AF%BC%E7%9A%84%E6%8C%87%E7%A4%BA%E5%AE%8C%E6%88%90%20Typecho%20%E7%9A%84%E5%AE%89%E8%A3%85%E3%80%82%20">Nice2CU</a></p>
 
     </div>
     
