@@ -181,58 +181,6 @@
         
 
 <div class="post">
-    <a href="/post/150/">
-        <h2 class="post-title">typechon美化（主题通用）</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/1/13
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>前言 奶糖一开始其实是想凭借自己的力量去独立写出属于自己的主题，但是嘛… 事与愿违嘛，因为学业以及奶糖的学习能力比较差之类的，自己写主题的目标显得有些遥远（之前所说的开始学习还在继续啦，只不过内容太多，如果写出来就太长了）。所以奶糖决定对于自己所用的主题进行魔改。（本主题取自季悠然大佬的<a target="_blank" rel="noopener" href="https://github.com/youranreus/G">G主题</a>） 那么话不多说，开始吧d(￣▽￣)b 正文 因为奶…</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">未标记</a>
-        </span>
-        
-    </div>
-    <a href="/post/150/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2025/12/12/hexo%E6%8C%87%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
         <h2 class="post-title">hexo指令使用指南</h2>
     </a>
@@ -259,236 +207,16 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="Hexo-命令完全手册：从入门到精通的命令行指南"><a href="#Hexo-命令完全手册：从入门到精通的命令行指南" class="headerlink" title="Hexo 命令完全手册：从入门到精通的命令行指南"></a>Hexo 命令完全手册：从入门到精通的命令行指南</h1><p>**</p>
-<p>Hexo 作为一款高效的静态博客框架，其所有核心操作都可以通过命令行完成。本文将系统梳理 Hexo 从安装、初始化到部署的全流程命令，涵盖基础操作、内容管理、配置优化、插件使用等场景，帮助你快速掌握 Hexo 命令行工具的使用技巧，提升博客搭建与维护效率。</p>
-<h2 id="一、环境准备与-Hexo-安装"><a href="#一、环境准备与-Hexo-安装" class="headerlink" title="一、环境准备与 Hexo 安装"></a>一、环境准备与 Hexo 安装</h2><p>在使用 Hexo 命令前，需先完成环境配置与框架安装。Hexo 基于 Node.js 运行，因此必须先安装 Node.js（建议版本 ≥ 14.0.0）和 Git。</p>
-<h3 id="1-1-检查依赖环境"><a href="#1-1-检查依赖环境" class="headerlink" title="1.1 检查依赖环境"></a>1.1 检查依赖环境</h3><p>安装前先验证 Node.js 和 Git 是否已正确安装：</p>
-<pre><code># 检查 Node.js 版本（需 ≥ 14.0.0）
-node -v 或 node --version
+            Hexo 命令完全手册：从入门到精通的命令行指南
+**
 
-# 检查 npm 版本（Node.js 自带，用于包管理）
-npm -v 或 npm --version
+Hexo 作为一款高效的静态博客框架，其所有核心操作都可以通过命令行完成。本文将系统梳理 Hexo 从安装、初始化到部署的全流程命令，涵盖基础操作、内容管理、配置优化、插件使用等场景，帮助你快速掌握 Hexo 命令行工具的使用技巧，提升博客搭建与维护效率。
 
-# 检查 Git 版本
-git -v 或 git --version
-</code></pre>
-<h3 id="1-2-全局安装-Hexo-CLI"><a href="#1-2-全局安装-Hexo-CLI" class="headerlink" title="1.2 全局安装 Hexo CLI"></a>1.2 全局安装 Hexo CLI</h3><p>通过 npm 全局安装 Hexo 命令行工具（Hexo CLI），安装后可在任意目录使用 hexo 命令：</p>
-<pre><code># 全局安装 Hexo
-npm install -g hexo-cli
+一、环境准备与 Hexo 安装
+在使用 Hexo 命令前，需先完成环境配置与框架安装。Hexo 基于 Node.js 运行，因此必须先安装 Node.js（建议版本 ≥ 14.0.0）和 Git。
 
-# 验证 Hexo 是否安装成功（查看版本）
-hexo -v 或 hexo --version
-</code></pre>
-<blockquote>
-<p><strong>注意</strong>：若出现权限问题（如 macOS&#x2F;Linux 下的 EACCES 错误），可避免使用 sudo，而是通过 <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a> 管理 Node.js 版本，或修改 npm 全局包安装路径。</p>
-</blockquote>
-<h2 id="二、基础命令：初始化与项目管理"><a href="#二、基础命令：初始化与项目管理" class="headerlink" title="二、基础命令：初始化与项目管理"></a>二、基础命令：初始化与项目管理</h2><p>初始化 Hexo 项目后，所有操作需在项目根目录下执行。以下是项目创建、启动、清理等核心基础命令。</p>
-<h3 id="2-1-初始化-Hexo-项目"><a href="#2-1-初始化-Hexo-项目" class="headerlink" title="2.1 初始化 Hexo 项目"></a>2.1 初始化 Hexo 项目</h3><p>在指定目录创建新的 Hexo 项目（blog 为项目名，可自定义）：</p>
-<pre><code># 1. 进入目标目录（示例：进入用户目录下的 &quot;projects&quot; 文件夹）
-cd ~/projects
-
-# 2. 初始化 Hexo 项目（会创建名为 &quot;blog&quot; 的文件夹，包含所有配置和文件）
-hexo init blog
-
-# 3. 进入项目根目录（后续所有命令需在此目录执行）
-cd blog
-
-# 4. 安装项目依赖（初始化后自动生成 package.json，需安装依赖才能运行）
-npm install
-</code></pre>
-<h3 id="2-2-本地预览：启动开发服务器"><a href="#2-2-本地预览：启动开发服务器" class="headerlink" title="2.2 本地预览：启动开发服务器"></a>2.2 本地预览：启动开发服务器</h3><p>启动本地服务器，实时预览博客效果（默认支持热重载，修改文件后无需重启服务器）：</p>
-<pre><code># 基础命令：启动本地服务器，默认端口 4000
-hexo server 或 hexo s
-
-# 常用参数：
-# 1. 自定义端口（如端口 5000）
-hexo s -p 5000 或 hexo s --port 5000
-
-# 2. 启动后自动打开浏览器（需浏览器支持）
-hexo s -o 或 hexo s --open
-
-# 3. 关闭热重载（仅在调试时使用）
-hexo s -n 或 hexo s --no-incremental
-</code></pre>
-<p>启动后访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 即可查看本地博客。</p>
-<h3 id="2-3-生成静态文件"><a href="#2-3-生成静态文件" class="headerlink" title="2.3 生成静态文件"></a>2.3 生成静态文件</h3><p>Hexo 会将 Markdown 文章、主题模板等编译为 HTML&#x2F;CSS&#x2F;JS 等静态文件，生成的文件默认存放在 public 目录：</p>
-<pre><code># 基础命令：生成静态文件
-hexo generate 或 hexo g
-
-# 常用参数：
-# 1. 强制重新生成所有文件（忽略缓存，解决文件更新不生效问题）
-hexo g -f 或 hexo g --force
-
-# 2. 生成后显示文件大小统计
-hexo g -s 或 hexo g --size
-</code></pre>
-<h3 id="2-4-清理生成文件与缓存"><a href="#2-4-清理生成文件与缓存" class="headerlink" title="2.4 清理生成文件与缓存"></a>2.4 清理生成文件与缓存</h3><p>当修改主题、配置或遇到文件冲突时，需清理 public 目录（生成的静态文件）和 db.json（缓存文件）：</p>
-<pre><code># 清理 public 目录和缓存
-hexo clean
-</code></pre>
-<p>建议在执行 hexo g 前先运行 hexo clean，避免旧文件干扰。</p>
-<h2 id="三、内容管理：文章、页面与分类"><a href="#三、内容管理：文章、页面与分类" class="headerlink" title="三、内容管理：文章、页面与分类"></a>三、内容管理：文章、页面与分类</h2><p>Hexo 的核心功能是管理博客内容，包括创建文章、页面、分类、标签等，以下是常用内容管理命令。</p>
-<h3 id="3-1-创建新文章"><a href="#3-1-创建新文章" class="headerlink" title="3.1 创建新文章"></a>3.1 创建新文章</h3><p>创建 Markdown 格式的文章，默认存放在 source&#x2F;_posts 目录：</p>
-<pre><code># 基础命令：创建标题为 &quot;Hello Hexo&quot; 的文章（文件名自动转为小写，空格替换为 &quot;-&quot;）
-hexo new &quot;Hello Hexo&quot; 或 hexo n &quot;Hello Hexo&quot;
-
-# 常用参数与扩展：
-# 1. 指定文章模板（需先在 scaffolds 目录自定义模板，如 &quot;draft&quot; 草稿模板）
-hexo n draft &quot;未发布的草稿&quot;
-
-# 2. 创建带分类和标签的文章（命令行直接指定，无需手动编辑 Front-matter）
-hexo n &quot;Hexo 命令手册&quot; --category &quot;技术文档&quot; --tags &quot;Hexo,命令行&quot;
-
-# 3. 创建文章时指定日期（格式：YYYY-MM-DD，如 2024-05-20）
-hexo n &quot;指定日期的文章&quot; --date 2024-05-20
-</code></pre>
-<p>文章生成后，会自动在 Markdown 文件头部添加 <strong>Front-matter</strong>（如标题、日期、分类、标签等），可手动编辑修改。</p>
-<h3 id="3-2-草稿管理"><a href="#3-2-草稿管理" class="headerlink" title="3.2 草稿管理"></a>3.2 草稿管理</h3><p>Hexo 支持草稿功能，未发布的文章可先存为草稿（默认存放在 source&#x2F;_drafts 目录，不参与静态文件生成）：</p>
-<pre><code># 1. 创建草稿（使用 draft 模板）
-hexo n draft &quot;我的草稿&quot;
-
-# 2. 预览草稿（本地服务器需添加 --draft 参数才能显示草稿）
-hexo s --draft
-
-# 3. 发布草稿（将草稿移至 source/_posts 目录，转为正式文章）
-hexo publish draft &quot;我的草稿&quot; 或 hexo p draft &quot;我的草稿&quot;
-</code></pre>
-<h3 id="3-3-创建独立页面"><a href="#3-3-创建独立页面" class="headerlink" title="3.3 创建独立页面"></a>3.3 创建独立页面</h3><p>创建独立页面（如 “关于我”“分类页”“标签页”），默认存放在 source 目录下的对应文件夹中：</p>
-<pre><code># 基础命令：创建 &quot;关于我&quot; 页面（生成 source/about/index.md）
-hexo new page &quot;about&quot; 或 hexo n page &quot;about&quot;
-
-# 常用场景：
-# 1. 创建分类页（需主题支持，生成 source/categories/index.md）
-hexo n page &quot;categories&quot;
-
-# 2. 创建标签页（需主题支持，生成 source/tags/index.md）
-hexo n page &quot;tags&quot;
-
-# 3. 创建带自定义路径的页面（如 source/tech/hexo/index.md）
-hexo n page &quot;tech/hexo&quot;
-</code></pre>
-<h3 id="3-4-内容统计与列表"><a href="#3-4-内容统计与列表" class="headerlink" title="3.4 内容统计与列表"></a>3.4 内容统计与列表</h3><p>查看博客中的文章、页面、分类、标签等统计信息：</p>
-<pre><code># 查看所有文章列表（含标题、日期、路径）
-hexo list posts
-
-# 查看所有页面列表
-hexo list pages
-
-# 查看所有分类及对应文章数
-hexo list categories
-
-# 查看所有标签及对应文章数
-hexo list tags
-</code></pre>
-<h2 id="四、配置与优化：自定义博客行为"><a href="#四、配置与优化：自定义博客行为" class="headerlink" title="四、配置与优化：自定义博客行为"></a>四、配置与优化：自定义博客行为</h2><p>Hexo 的配置文件为 _config.yml（项目根目录），可通过命令行或手动编辑修改配置。以下是常用配置相关命令。</p>
-<h3 id="4-1-查看配置信息"><a href="#4-1-查看配置信息" class="headerlink" title="4.1 查看配置信息"></a>4.1 查看配置信息</h3><p>快速查看 Hexo 核心配置（如站点标题、主题、时区等）：</p>
-<pre><code># 查看所有配置（输出完整的 _config.yml 内容）
-cat _config.yml
-
-# 查看指定配置（如查看当前使用的主题）
-grep &quot;theme&quot; _config.yml  # Linux/macOS
-findstr &quot;theme&quot; _config.yml  # Windows
-</code></pre>
-<h3 id="4-2-插件安装与管理"><a href="#4-2-插件安装与管理" class="headerlink" title="4.2 插件安装与管理"></a>4.2 插件安装与管理</h3><p>Hexo 生态丰富，可通过 npm 安装插件扩展功能（如评论、搜索、SEO 优化等）：</p>
-<pre><code># 1. 安装插件（示例：安装 hexo-generator-sitemap 生成站点地图）
-npm install hexo-generator-sitemap --save
-
-# 2. 卸载插件（示例：卸载 hexo-generator-sitemap）
-npm uninstall hexo-generator-sitemap --save
-
-# 3. 更新插件（更新所有项目依赖，包括 Hexo 插件）
-npm update
-
-# 4. 查看已安装的插件（查看 package.json 中的 dependencies）
-cat package.json | grep &quot;hexo-&quot;  # Linux/macOS
-findstr &quot;hexo-&quot; package.json  # Windows
-</code></pre>
-<p>安装插件后，需在 _config.yml 中配置插件参数（具体配置参考插件文档）。</p>
-<h3 id="4-3-主题管理"><a href="#4-3-主题管理" class="headerlink" title="4.3 主题管理"></a>4.3 主题管理</h3><p>Hexo 主题存放在 themes 目录，可通过 Git 克隆或手动下载主题：</p>
-<pre><code># 1. 克隆主题（示例：克隆 Next 主题，目前主流主题之一）
-git clone https://github.com/next-theme/hexo-theme-next.git themes/next
-
-# 2. 切换主题（修改 _config.yml 中的 theme 字段，如 theme: next）
-# 手动编辑 _config.yml 或使用命令行替换（Linux/macOS）：
-sed -i &#39;&#39; &#39;s/theme: .*/theme: next/&#39; _config.yml
-
-# 3. 更新主题（进入主题目录，拉取最新代码）
-cd themes/next
-git pull
-cd ../..  # 返回项目根目录
-</code></pre>
-<h2 id="五、部署命令：将博客发布到服务器"><a href="#五、部署命令：将博客发布到服务器" class="headerlink" title="五、部署命令：将博客发布到服务器"></a>五、部署命令：将博客发布到服务器</h2><p>生成静态文件后，需将 public 目录部署到服务器（如 GitHub Pages、GitLab Pages、Vercel、Netlify 等）。Hexo 提供 hexo deploy 命令简化部署流程，需先在 _config.yml 中配置部署信息。</p>
-<h3 id="5-1-配置部署信息"><a href="#5-1-配置部署信息" class="headerlink" title="5.1 配置部署信息"></a>5.1 配置部署信息</h3><p>在 _config.yml 末尾添加部署配置（以 GitHub Pages 为例）：</p>
-<pre><code>deploy:
-  type: git
-  repo: https://github.com/your-username/your-username.github.io.git  # 你的 GitHub 仓库地址
-  branch: main  # 部署分支（GitHub Pages 通常为 main 或 gh-pages）
-</code></pre>
-<p>若使用其他平台（如 Vercel），需安装对应插件（如 hexo-deployer-vercel）并配置 type: vercel。</p>
-<h3 id="5-2-执行部署"><a href="#5-2-执行部署" class="headerlink" title="5.2 执行部署"></a>5.2 执行部署</h3><p>部署前需先安装 hexo-deployer-git 插件（Git 部署必备）：</p>
-<pre><code># 安装 Git 部署插件
-npm install hexo-deployer-git --save
-
-# 执行部署（自动生成静态文件并推送至配置的仓库）
-hexo deploy 或 hexo d
-
-# 常用参数：
-# 1. 部署前强制重新生成静态文件（等价于 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d）
-hexo d -g 或 hexo d --generate
-
-# 2. 显示部署过程的详细日志
-hexo d --debug
-</code></pre>
-<blockquote>
-<p><strong>快捷命令</strong>：若需频繁执行 “清理 - 生成 - 部署” 流程，可在 package.json 中添加脚本：</p>
-</blockquote>
-<pre><code>&quot;scripts&quot;: {
-  &quot;deploy&quot;: &quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;
-}
-</code></pre>
-<p>之后只需执行 npm run deploy 即可完成全流程。</p>
-<h2 id="六、高级命令与实用技巧"><a href="#六、高级命令与实用技巧" class="headerlink" title="六、高级命令与实用技巧"></a>六、高级命令与实用技巧</h2><h3 id="6-1-自定义命令（通过-Hexo-插件）"><a href="#6-1-自定义命令（通过-Hexo-插件）" class="headerlink" title="6.1 自定义命令（通过 Hexo 插件）"></a>6.1 自定义命令（通过 Hexo 插件）</h3><p>Hexo 支持通过插件扩展命令，例如安装 hexo-cli-plugin 自定义脚本，或在 scripts 目录下创建 .js 文件编写自定义逻辑（如自动添加文章模板、批量修改 Front-matter 等）。</p>
-<p>示例：在 scripts&#x2F;auto-tag.js 中添加自动为文章添加标签的逻辑：</p>
-<pre><code>hexo.extend.filter.register(&#39;before_post_render&#39;, (data) =&gt; {
-  // 若文章无标签，自动添加 &quot;Hexo&quot; 标签
-  if (!data.tags || data.tags.length === 0) {
-    data.tags = [&#39;Hexo&#39;];
-  }
-  return data;
-});
-</code></pre>
-<h3 id="6-2-调试命令"><a href="#6-2-调试命令" class="headerlink" title="6.2 调试命令"></a>6.2 调试命令</h3><p>当遇到命令执行错误或博客异常时，可通过调试模式查看详细日志：</p>
-<pre><code># 启动调试模式（任何命令均可添加 --debug 参数）
-hexo s --debug  # 调试本地服务器
-hexo g --debug  # 调试生成过程
-hexo d --debug  # 调试部署过程
-</code></pre>
-<p>调试日志会显示详细的错误信息、文件路径、插件加载情况，便于定位问题。</p>
-<h3 id="6-3-命令别名与快捷操作"><a href="#6-3-命令别名与快捷操作" class="headerlink" title="6.3 命令别名与快捷操作"></a>6.3 命令别名与快捷操作</h3><p>为常用命令设置别名（以 Bash 为例，编辑 ~&#x2F;.bashrc 或 ~&#x2F;.zshrc）：</p>
-<pre><code># Hexo 命令别名
-alias hc=&quot;hexo clean&quot;
-alias hg=&quot;hexo g&quot;
-alias hs=&quot;hexo s&quot;
-alias hd=&quot;hexo d&quot;
-alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键部署
-</code></pre>
-<p>添加后执行 source ~&#x2F;.bashrc（或 source ~&#x2F;.zshrc）生效，之后只需输入 hgd 即可完成 “清理 - 生成 - 部署”。</p>
-<h2 id="七、常见问题与解决方案"><a href="#七、常见问题与解决方案" class="headerlink" title="七、常见问题与解决方案"></a>七、常见问题与解决方案</h2><ol>
-<li><strong>执行</strong> <strong>hexo</strong> <strong>命令提示 “command not found”</strong></li>
-</ol>
-<p>原因：Hexo 未全局安装或 Node.js 环境变量配置错误。</p>
-<p>解决：重新执行 npm install -g hexo-cli，并检查 Node.js 的 bin 目录是否在系统环境变量 PATH 中。</p>
-<ol>
-<li><strong>本地预览时文章不显示</strong></li>
-</ol>
-<p>原因：文章存放在 _drafts 目录（草稿），或 Front-matter 中 published: false。</p>
-<p>解决：执行 hexo publish draft “文章名” 发布草稿，或修改 published: true。</p>
-<ol>
-<li><strong>部署后 GitHub Pages 显示 404</strong></li>
-</ol>
-<p>原因：部署分支错误（如 GitHub Pages 需 main 或 gh-pages 分支），或 public 目录未正确推送。</p>
-<p>解决：检查 _config.yml 中 deploy.branch 配置，并重执行 hexo d -g。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Hexo 命令行工具是博客开发与维护的核心，掌握本文梳理的命令可覆盖从环境搭建到部署的全流程需求。建议根据实际使用场景，将常用命令（如一键部署、本地预览）设置别名，结合插件扩展功能，进一步提升效率。若需深入了解某一命令或插件，可参考 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">Hexo 官方文档</a> 或对应的插件说明。</p>
+1.1 检查依赖环境
+安装前先验证 Node.js 和 Git 是否已正确安装：
 
             
         </div>
@@ -503,7 +231,7 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
         
         <span class="tag">
             
-            <a href="/tags/%E5%91%BD%E4%BB%A4/" style="color: #ff7d73">命令</a>
+            <a href="/tags/%E5%91%BD%E4%BB%A4/" style="color: #00bcd4">命令</a>
         </span>
         
     </div>
@@ -558,9 +286,52 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>这是一个普通段落，可以 <strong>加粗</strong>、<em>斜体</em>、<del>删除线</del>。</p>
-<blockquote>
-<p>这是引用块（用于强调、引用文字）。</p>
+            一级标题
+二级标题
+三级标题
+这是一个普通段落，可以 加粗、斜体、删除线。
+
+这是引用块（用于强调、引用文字）。
+
+
+
+
+📋 列表
+无序列表：
+
+ * 苹果
+ * 香蕉
+ * 草莓
+
+有序列表：
+
+ 1. 吃早餐
+ 2. 写代码
+ 3. 睡觉
+
+
+
+
+🔗 链接与图片
+点我访问奶糖主页
+
+
+
+
+
+
+💻 代码块
+行内代码：console.log("Hello!")
+
+多行代码（带语言标识）：
+
+function greet(name) {
+  console.log(`你好, ${name}！`);
+}
+greet('奶糖');
+
+
+嗯，用户之前询问了关于Java泛型的问题，并且我已经给出了
             
         </div>
     </div>
@@ -608,7 +379,19 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
     <div class="description">
         <div class="content" v-pre>
             
-            <p>Reversingx64Elf100 c if ( (unsigned int)sub_4006FD(s) ) 需要走一遍sub_4006FD函数 函数内容 c __int64 __fastcall sub_4006FD(__int64 a1) { int i; &#x2F;&#x2F; [rsp+14h] [rbp24h] _QWORD v3[4]; &#x2F;&#x2F; [rsp+18h]…</p>
+            Reversingx64Elf100 c if ( (unsigned int)sub_4006FD(s) ) 需要走一遍sub_4006FD函数 函数内容 c __int64 __fastcall sub_4006FD(__int64 a1) { int i; // [rsp+14h] [rbp24h] _QWORD v3[4]; // [rsp+18h]…
+
+Reversing-x64Elf-100
+
+
+  if ( (unsigned int)sub_4006FD(s) )
+
+
+需要走一遍sub_4006FD函数
+
+函数内容
+
+__int64 __fastcall sub_4006FD(
             
         </div>
     </div>
@@ -622,7 +405,7 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
         
         <span class="tag">
             
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">未标记</a>
+            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #03a9f4">未标记</a>
         </span>
         
     </div>
@@ -656,7 +439,14 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
     <div class="description">
         <div class="content" v-pre>
             
-            <p>666 直接看到flag，不过当然是假的，输入的是v5,然后经过encode c int __fastcall encode(const char a1, __int64 a2) { _BYTE v3[104]; &#x2F;&#x2F; [rsp+10h] [rbp70h] int v4; &#x2F;&#x2F; [rsp+78h] [rbp8h] int i; &#x2F;&#x2F; [rsp+7Ch] [r…</p>
+            666 直接看到flag，不过当然是假的，输入的是v5,然后经过encode c int __fastcall encode(const char a1, __int64 a2) { _BYTE v3[104]; // [rsp+10h] [rbp70h] int v4; // [rsp+78h] [rbp8h] int i; // [rsp+7Ch] [r…
+
+666
+直接看到flag，不过当然是假的，输入的是v5,然后经过encode
+
+int __fastcall encode(const char *a1, __int64 a2)
+{
+  _BYTE v3[104]; // [rsp+
             
         </div>
     </div>
@@ -670,7 +460,7 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
         
         <span class="tag">
             
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ffa2c4">未标记</a>
+            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ff7d73">未标记</a>
         </span>
         
     </div>
@@ -704,7 +494,13 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
     <div class="description">
         <div class="content" v-pre>
             
-            <p>666 c int __fastcall main(int argc, const char argv, const char envp) { char s[240]; &#x2F;&#x2F; [rsp+0h] [rbp1E0h] BYREF char v5[240]; &#x2F;&#x2F; [rsp+F0h] [rbpF0h] BYREF memset(s, 0, 0x1EuLL); pr…</p>
+            666 c int __fastcall main(int argc, const char argv, const char envp) { char s[240]; // [rsp+0h] [rbp1E0h] BYREF char v5[240]; // [rsp+F0h] [rbpF0h] BYREF memset(s, 0, 0x1EuLL); pr…
+
+666
+
+int __fastcall main(int argc, const char **argv, const char **envp)
+{
+  char s[240]; // [rsp+0h] [rbp-1E0h] BYRE
             
         </div>
     </div>
@@ -718,7 +514,7 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
         
         <span class="tag">
             
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">未标记</a>
+            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ff7d73">未标记</a>
         </span>
         
     </div>
@@ -752,7 +548,14 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
     <div class="description">
         <div class="content" v-pre>
             
-            <p>java import javax.swing.; import java.awt.; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; public class LoginInterface extends JFrame { private JTextField…</p>
+            java import javax.swing.; import java.awt.; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; public class LoginInterface extends JFrame { private JTextField…
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+pu
             
         </div>
     </div>
@@ -766,7 +569,7 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
         
         <span class="tag">
             
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ffa2c4">未标记</a>
+            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #03a9f4">未标记</a>
         </span>
         
     </div>
@@ -800,7 +603,15 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
     <div class="description">
         <div class="content" v-pre>
             
-            <p>[collapse title”第一题”] java import java.awt.event.; import javax.swing.; import java.awt.; public class Ex8_1 extends JFrame implements WindowListener { public Ex8_1() { setLayout(n…</p>
+            [collapse title”第一题”] java import java.awt.event.; import javax.swing.; import java.awt.; public class Ex8_1 extends JFrame implements WindowListener { public Ex8_1() { setLayout(n…
+
+[collapse title=”第一题”]
+
+import java.awt.event.*;
+import javax.swing.*;
+import java.awt.*;
+
+public class Ex8_1 extends
             
         </div>
     </div>
@@ -848,7 +659,14 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
     <div class="description">
         <div class="content" v-pre>
             
-            <p>[collapse title”无注释版，点击打开”] java import javax.swing.; import java.awt.; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; public class 登录界面 extends JFrame { …</p>
+            [collapse title”无注释版，点击打开”] java import javax.swing.; import java.awt.; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; public class 登录界面 extends JFrame { …
+
+[collapse title=”无注释版，点击打开”]
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java
             
         </div>
     </div>
@@ -862,11 +680,66 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
         
         <span class="tag">
             
-            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">未标记</a>
+            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ff7d73">未标记</a>
         </span>
         
     </div>
     <a href="/post/180/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/post/175/">
+        <h2 class="post-title">week6</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                未来与梦
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            [collapse title”第一题(点击打开)”] java public class Ex5_1 { public static void main(String[] args) { try { int num[] new int[10]; System.out.println(“num[10] is “ + num[10]); } catch (Ar…
+
+[collapse title=”第一题(点击打开)”]
+
+public class Ex5_1 {
+    public static void main(String[] args) {
+        try {
+       
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">未标记</a>
+        </span>
+        
+    </div>
+    <a href="/post/175/" class="go-post">阅读全文</a>
 </div>
 
 
