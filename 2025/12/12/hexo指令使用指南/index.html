@@ -184,20 +184,34 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%91%BD%E4%BB%A4/" style="color: #ff7d73">
+                <a href="/tags/%E5%91%BD%E4%BB%A4/" style="color: #03a9f4">
                     命令
                 </a>
             </span>
             
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
+        
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：2.9k | 阅读时长：11 分钟
+        </span>
+        
     </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
     
     <div class="content" v-pre>
-        <h1><span id="hexo-命令完全手册从入门到精通的命令行指南">Hexo 命令完全手册：从入门到精通的命令行指南</span><a href="#hexo-命令完全手册从入门到精通的命令行指南" class="header-anchor">#</a></h1><p>**</p>
+        <h1><span id="hexo-命令完全手册从入门到精通的命令行指南">Hexo 命令完全手册：从入门到精通的命令行指南</span></h1><p>**</p>
 <p>Hexo 作为一款高效的静态博客框架，其所有核心操作都可以通过命令行完成。本文将系统梳理 Hexo 从安装、初始化到部署的全流程命令，涵盖基础操作、内容管理、配置优化、插件使用等场景，帮助你快速掌握 Hexo 命令行工具的使用技巧，提升博客搭建与维护效率。</p>
-<h2><span id="一-环境准备与-hexo-安装">一、环境准备与 Hexo 安装</span><a href="#一-环境准备与-hexo-安装" class="header-anchor">#</a></h2><p>在使用 Hexo 命令前，需先完成环境配置与框架安装。Hexo 基于 Node.js 运行，因此必须先安装 Node.js（建议版本 ≥ 14.0.0）和 Git。</p>
-<h3><span id="11-检查依赖环境">1.1 检查依赖环境</span><a href="#11-检查依赖环境" class="header-anchor">#</a></h3><p>安装前先验证 Node.js 和 Git 是否已正确安装：</p>
+<h2><span id="一-环境准备与-hexo-安装">一、环境准备与 Hexo 安装</span></h2><p>在使用 Hexo 命令前，需先完成环境配置与框架安装。Hexo 基于 Node.js 运行，因此必须先安装 Node.js（建议版本 ≥ 14.0.0）和 Git。</p>
+<h3><span id="11-检查依赖环境">1.1 检查依赖环境</span></h3><p>安装前先验证 Node.js 和 Git 是否已正确安装：</p>
 <pre><code># 检查 Node.js 版本（需 ≥ 14.0.0）
 node -v 或 node --version
 
@@ -207,7 +221,7 @@ npm -v 或 npm --version
 # 检查 Git 版本
 git -v 或 git --version
 </code></pre>
-<h3><span id="12-全局安装-hexo-cli">1.2 全局安装 Hexo CLI</span><a href="#12-全局安装-hexo-cli" class="header-anchor">#</a></h3><p>通过 npm 全局安装 Hexo 命令行工具（Hexo CLI），安装后可在任意目录使用 hexo 命令：</p>
+<h3><span id="12-全局安装-hexo-cli">1.2 全局安装 Hexo CLI</span></h3><p>通过 npm 全局安装 Hexo 命令行工具（Hexo CLI），安装后可在任意目录使用 hexo 命令：</p>
 <pre><code># 全局安装 Hexo
 npm install -g hexo-cli
 
@@ -217,8 +231,8 @@ hexo -v 或 hexo --version
 <blockquote>
 <p><strong>注意</strong>：若出现权限问题（如 macOS&#x2F;Linux 下的 EACCES 错误），可避免使用 sudo，而是通过 <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a> 管理 Node.js 版本，或修改 npm 全局包安装路径。</p>
 </blockquote>
-<h2><span id="二-基础命令初始化与项目管理">二、基础命令：初始化与项目管理</span><a href="#二-基础命令初始化与项目管理" class="header-anchor">#</a></h2><p>初始化 Hexo 项目后，所有操作需在项目根目录下执行。以下是项目创建、启动、清理等核心基础命令。</p>
-<h3><span id="21-初始化-hexo-项目">2.1 初始化 Hexo 项目</span><a href="#21-初始化-hexo-项目" class="header-anchor">#</a></h3><p>在指定目录创建新的 Hexo 项目（blog 为项目名，可自定义）：</p>
+<h2><span id="二-基础命令初始化与项目管理">二、基础命令：初始化与项目管理</span></h2><p>初始化 Hexo 项目后，所有操作需在项目根目录下执行。以下是项目创建、启动、清理等核心基础命令。</p>
+<h3><span id="21-初始化-hexo-项目">2.1 初始化 Hexo 项目</span></h3><p>在指定目录创建新的 Hexo 项目（blog 为项目名，可自定义）：</p>
 <pre><code># 1. 进入目标目录（示例：进入用户目录下的 &quot;projects&quot; 文件夹）
 cd ~/projects
 
@@ -231,7 +245,7 @@ cd blog
 # 4. 安装项目依赖（初始化后自动生成 package.json，需安装依赖才能运行）
 npm install
 </code></pre>
-<h3><span id="22-本地预览启动开发服务器">2.2 本地预览：启动开发服务器</span><a href="#22-本地预览启动开发服务器" class="header-anchor">#</a></h3><p>启动本地服务器，实时预览博客效果（默认支持热重载，修改文件后无需重启服务器）：</p>
+<h3><span id="22-本地预览启动开发服务器">2.2 本地预览：启动开发服务器</span></h3><p>启动本地服务器，实时预览博客效果（默认支持热重载，修改文件后无需重启服务器）：</p>
 <pre><code># 基础命令：启动本地服务器，默认端口 4000
 hexo server 或 hexo s
 
@@ -246,7 +260,7 @@ hexo s -o 或 hexo s --open
 hexo s -n 或 hexo s --no-incremental
 </code></pre>
 <p>启动后访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 即可查看本地博客。</p>
-<h3><span id="23-生成静态文件">2.3 生成静态文件</span><a href="#23-生成静态文件" class="header-anchor">#</a></h3><p>Hexo 会将 Markdown 文章、主题模板等编译为 HTML&#x2F;CSS&#x2F;JS 等静态文件，生成的文件默认存放在 public 目录：</p>
+<h3><span id="23-生成静态文件">2.3 生成静态文件</span></h3><p>Hexo 会将 Markdown 文章、主题模板等编译为 HTML&#x2F;CSS&#x2F;JS 等静态文件，生成的文件默认存放在 public 目录：</p>
 <pre><code># 基础命令：生成静态文件
 hexo generate 或 hexo g
 
@@ -257,13 +271,13 @@ hexo g -f 或 hexo g --force
 # 2. 生成后显示文件大小统计
 hexo g -s 或 hexo g --size
 </code></pre>
-<h3><span id="24-清理生成文件与缓存">2.4 清理生成文件与缓存</span><a href="#24-清理生成文件与缓存" class="header-anchor">#</a></h3><p>当修改主题、配置或遇到文件冲突时，需清理 public 目录（生成的静态文件）和 db.json（缓存文件）：</p>
+<h3><span id="24-清理生成文件与缓存">2.4 清理生成文件与缓存</span></h3><p>当修改主题、配置或遇到文件冲突时，需清理 public 目录（生成的静态文件）和 db.json（缓存文件）：</p>
 <pre><code># 清理 public 目录和缓存
 hexo clean
 </code></pre>
 <p>建议在执行 hexo g 前先运行 hexo clean，避免旧文件干扰。</p>
-<h2><span id="三-内容管理文章-页面与分类">三、内容管理：文章、页面与分类</span><a href="#三-内容管理文章-页面与分类" class="header-anchor">#</a></h2><p>Hexo 的核心功能是管理博客内容，包括创建文章、页面、分类、标签等，以下是常用内容管理命令。</p>
-<h3><span id="31-创建新文章">3.1 创建新文章</span><a href="#31-创建新文章" class="header-anchor">#</a></h3><p>创建 Markdown 格式的文章，默认存放在 source&#x2F;_posts 目录：</p>
+<h2><span id="三-内容管理文章-页面与分类">三、内容管理：文章、页面与分类</span></h2><p>Hexo 的核心功能是管理博客内容，包括创建文章、页面、分类、标签等，以下是常用内容管理命令。</p>
+<h3><span id="31-创建新文章">3.1 创建新文章</span></h3><p>创建 Markdown 格式的文章，默认存放在 source&#x2F;_posts 目录：</p>
 <pre><code># 基础命令：创建标题为 &quot;Hello Hexo&quot; 的文章（文件名自动转为小写，空格替换为 &quot;-&quot;）
 hexo new &quot;Hello Hexo&quot; 或 hexo n &quot;Hello Hexo&quot;
 
@@ -278,7 +292,7 @@ hexo n &quot;Hexo 命令手册&quot; --category &quot;技术文档&quot; --tags 
 hexo n &quot;指定日期的文章&quot; --date 2024-05-20
 </code></pre>
 <p>文章生成后，会自动在 Markdown 文件头部添加 <strong>Front-matter</strong>（如标题、日期、分类、标签等），可手动编辑修改。</p>
-<h3><span id="32-草稿管理">3.2 草稿管理</span><a href="#32-草稿管理" class="header-anchor">#</a></h3><p>Hexo 支持草稿功能，未发布的文章可先存为草稿（默认存放在 source&#x2F;_drafts 目录，不参与静态文件生成）：</p>
+<h3><span id="32-草稿管理">3.2 草稿管理</span></h3><p>Hexo 支持草稿功能，未发布的文章可先存为草稿（默认存放在 source&#x2F;_drafts 目录，不参与静态文件生成）：</p>
 <pre><code># 1. 创建草稿（使用 draft 模板）
 hexo n draft &quot;我的草稿&quot;
 
@@ -288,7 +302,7 @@ hexo s --draft
 # 3. 发布草稿（将草稿移至 source/_posts 目录，转为正式文章）
 hexo publish draft &quot;我的草稿&quot; 或 hexo p draft &quot;我的草稿&quot;
 </code></pre>
-<h3><span id="33-创建独立页面">3.3 创建独立页面</span><a href="#33-创建独立页面" class="header-anchor">#</a></h3><p>创建独立页面（如 “关于我”“分类页”“标签页”），默认存放在 source 目录下的对应文件夹中：</p>
+<h3><span id="33-创建独立页面">3.3 创建独立页面</span></h3><p>创建独立页面（如 “关于我”“分类页”“标签页”），默认存放在 source 目录下的对应文件夹中：</p>
 <pre><code># 基础命令：创建 &quot;关于我&quot; 页面（生成 source/about/index.md）
 hexo new page &quot;about&quot; 或 hexo n page &quot;about&quot;
 
@@ -302,7 +316,7 @@ hexo n page &quot;tags&quot;
 # 3. 创建带自定义路径的页面（如 source/tech/hexo/index.md）
 hexo n page &quot;tech/hexo&quot;
 </code></pre>
-<h3><span id="34-内容统计与列表">3.4 内容统计与列表</span><a href="#34-内容统计与列表" class="header-anchor">#</a></h3><p>查看博客中的文章、页面、分类、标签等统计信息：</p>
+<h3><span id="34-内容统计与列表">3.4 内容统计与列表</span></h3><p>查看博客中的文章、页面、分类、标签等统计信息：</p>
 <pre><code># 查看所有文章列表（含标题、日期、路径）
 hexo list posts
 
@@ -315,8 +329,8 @@ hexo list categories
 # 查看所有标签及对应文章数
 hexo list tags
 </code></pre>
-<h2><span id="四-配置与优化自定义博客行为">四、配置与优化：自定义博客行为</span><a href="#四-配置与优化自定义博客行为" class="header-anchor">#</a></h2><p>Hexo 的配置文件为 _config.yml（项目根目录），可通过命令行或手动编辑修改配置。以下是常用配置相关命令。</p>
-<h3><span id="41-查看配置信息">4.1 查看配置信息</span><a href="#41-查看配置信息" class="header-anchor">#</a></h3><p>快速查看 Hexo 核心配置（如站点标题、主题、时区等）：</p>
+<h2><span id="四-配置与优化自定义博客行为">四、配置与优化：自定义博客行为</span></h2><p>Hexo 的配置文件为 _config.yml（项目根目录），可通过命令行或手动编辑修改配置。以下是常用配置相关命令。</p>
+<h3><span id="41-查看配置信息">4.1 查看配置信息</span></h3><p>快速查看 Hexo 核心配置（如站点标题、主题、时区等）：</p>
 <pre><code># 查看所有配置（输出完整的 _config.yml 内容）
 cat _config.yml
 
@@ -324,7 +338,7 @@ cat _config.yml
 grep &quot;theme&quot; _config.yml  # Linux/macOS
 findstr &quot;theme&quot; _config.yml  # Windows
 </code></pre>
-<h3><span id="42-插件安装与管理">4.2 插件安装与管理</span><a href="#42-插件安装与管理" class="header-anchor">#</a></h3><p>Hexo 生态丰富，可通过 npm 安装插件扩展功能（如评论、搜索、SEO 优化等）：</p>
+<h3><span id="42-插件安装与管理">4.2 插件安装与管理</span></h3><p>Hexo 生态丰富，可通过 npm 安装插件扩展功能（如评论、搜索、SEO 优化等）：</p>
 <pre><code># 1. 安装插件（示例：安装 hexo-generator-sitemap 生成站点地图）
 npm install hexo-generator-sitemap --save
 
@@ -339,7 +353,7 @@ cat package.json | grep &quot;hexo-&quot;  # Linux/macOS
 findstr &quot;hexo-&quot; package.json  # Windows
 </code></pre>
 <p>安装插件后，需在 _config.yml 中配置插件参数（具体配置参考插件文档）。</p>
-<h3><span id="43-主题管理">4.3 主题管理</span><a href="#43-主题管理" class="header-anchor">#</a></h3><p>Hexo 主题存放在 themes 目录，可通过 Git 克隆或手动下载主题：</p>
+<h3><span id="43-主题管理">4.3 主题管理</span></h3><p>Hexo 主题存放在 themes 目录，可通过 Git 克隆或手动下载主题：</p>
 <pre><code># 1. 克隆主题（示例：克隆 Next 主题，目前主流主题之一）
 git clone https://github.com/next-theme/hexo-theme-next.git themes/next
 
@@ -352,15 +366,15 @@ cd themes/next
 git pull
 cd ../..  # 返回项目根目录
 </code></pre>
-<h2><span id="五-部署命令将博客发布到服务器">五、部署命令：将博客发布到服务器</span><a href="#五-部署命令将博客发布到服务器" class="header-anchor">#</a></h2><p>生成静态文件后，需将 public 目录部署到服务器（如 GitHub Pages、GitLab Pages、Vercel、Netlify 等）。Hexo 提供 hexo deploy 命令简化部署流程，需先在 _config.yml 中配置部署信息。</p>
-<h3><span id="51-配置部署信息">5.1 配置部署信息</span><a href="#51-配置部署信息" class="header-anchor">#</a></h3><p>在 _config.yml 末尾添加部署配置（以 GitHub Pages 为例）：</p>
+<h2><span id="五-部署命令将博客发布到服务器">五、部署命令：将博客发布到服务器</span></h2><p>生成静态文件后，需将 public 目录部署到服务器（如 GitHub Pages、GitLab Pages、Vercel、Netlify 等）。Hexo 提供 hexo deploy 命令简化部署流程，需先在 _config.yml 中配置部署信息。</p>
+<h3><span id="51-配置部署信息">5.1 配置部署信息</span></h3><p>在 _config.yml 末尾添加部署配置（以 GitHub Pages 为例）：</p>
 <pre><code>deploy:
   type: git
   repo: https://github.com/your-username/your-username.github.io.git  # 你的 GitHub 仓库地址
   branch: main  # 部署分支（GitHub Pages 通常为 main 或 gh-pages）
 </code></pre>
 <p>若使用其他平台（如 Vercel），需安装对应插件（如 hexo-deployer-vercel）并配置 type: vercel。</p>
-<h3><span id="52-执行部署">5.2 执行部署</span><a href="#52-执行部署" class="header-anchor">#</a></h3><p>部署前需先安装 hexo-deployer-git 插件（Git 部署必备）：</p>
+<h3><span id="52-执行部署">5.2 执行部署</span></h3><p>部署前需先安装 hexo-deployer-git 插件（Git 部署必备）：</p>
 <pre><code># 安装 Git 部署插件
 npm install hexo-deployer-git --save
 
@@ -382,7 +396,7 @@ hexo d --debug
 }
 </code></pre>
 <p>之后只需执行 npm run deploy 即可完成全流程。</p>
-<h2><span id="六-高级命令与实用技巧">六、高级命令与实用技巧</span><a href="#六-高级命令与实用技巧" class="header-anchor">#</a></h2><h3><span id="61-自定义命令通过-hexo-插件">6.1 自定义命令（通过 Hexo 插件）</span><a href="#61-自定义命令通过-hexo-插件" class="header-anchor">#</a></h3><p>Hexo 支持通过插件扩展命令，例如安装 hexo-cli-plugin 自定义脚本，或在 scripts 目录下创建 .js 文件编写自定义逻辑（如自动添加文章模板、批量修改 Front-matter 等）。</p>
+<h2><span id="六-高级命令与实用技巧">六、高级命令与实用技巧</span></h2><h3><span id="61-自定义命令通过-hexo-插件">6.1 自定义命令（通过 Hexo 插件）</span></h3><p>Hexo 支持通过插件扩展命令，例如安装 hexo-cli-plugin 自定义脚本，或在 scripts 目录下创建 .js 文件编写自定义逻辑（如自动添加文章模板、批量修改 Front-matter 等）。</p>
 <p>示例：在 scripts&#x2F;auto-tag.js 中添加自动为文章添加标签的逻辑：</p>
 <pre><code>hexo.extend.filter.register(&#39;before_post_render&#39;, (data) =&gt; {
   // 若文章无标签，自动添加 &quot;Hexo&quot; 标签
@@ -392,14 +406,14 @@ hexo d --debug
   return data;
 });
 </code></pre>
-<h3><span id="62-调试命令">6.2 调试命令</span><a href="#62-调试命令" class="header-anchor">#</a></h3><p>当遇到命令执行错误或博客异常时，可通过调试模式查看详细日志：</p>
+<h3><span id="62-调试命令">6.2 调试命令</span></h3><p>当遇到命令执行错误或博客异常时，可通过调试模式查看详细日志：</p>
 <pre><code># 启动调试模式（任何命令均可添加 --debug 参数）
 hexo s --debug  # 调试本地服务器
 hexo g --debug  # 调试生成过程
 hexo d --debug  # 调试部署过程
 </code></pre>
 <p>调试日志会显示详细的错误信息、文件路径、插件加载情况，便于定位问题。</p>
-<h3><span id="63-命令别名与快捷操作">6.3 命令别名与快捷操作</span><a href="#63-命令别名与快捷操作" class="header-anchor">#</a></h3><p>为常用命令设置别名（以 Bash 为例，编辑 ~&#x2F;.bashrc 或 ~&#x2F;.zshrc）：</p>
+<h3><span id="63-命令别名与快捷操作">6.3 命令别名与快捷操作</span></h3><p>为常用命令设置别名（以 Bash 为例，编辑 ~&#x2F;.bashrc 或 ~&#x2F;.zshrc）：</p>
 <pre><code># Hexo 命令别名
 alias hc=&quot;hexo clean&quot;
 alias hg=&quot;hexo g&quot;
@@ -408,7 +422,7 @@ alias hd=&quot;hexo d&quot;
 alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键部署
 </code></pre>
 <p>添加后执行 source ~&#x2F;.bashrc（或 source ~&#x2F;.zshrc）生效，之后只需输入 hgd 即可完成 “清理 - 生成 - 部署”。</p>
-<h2><span id="七-常见问题与解决方案">七、常见问题与解决方案</span><a href="#七-常见问题与解决方案" class="header-anchor">#</a></h2><ol>
+<h2><span id="七-常见问题与解决方案">七、常见问题与解决方案</span></h2><ol>
 <li><strong>执行</strong> <strong>hexo</strong> <strong>命令提示 “command not found”</strong></li>
 </ol>
 <p>原因：Hexo 未全局安装或 Node.js 环境变量配置错误。</p>
@@ -423,7 +437,7 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
 </ol>
 <p>原因：部署分支错误（如 GitHub Pages 需 main 或 gh-pages 分支），或 public 目录未正确推送。</p>
 <p>解决：检查 _config.yml 中 deploy.branch 配置，并重执行 hexo d -g。</p>
-<h2><span id="总结">总结</span><a href="#总结" class="header-anchor">#</a></h2><p>Hexo 命令行工具是博客开发与维护的核心，掌握本文梳理的命令可覆盖从环境搭建到部署的全流程需求。建议根据实际使用场景，将常用命令（如一键部署、本地预览）设置别名，结合插件扩展功能，进一步提升效率。若需深入了解某一命令或插件，可参考 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">Hexo 官方文档</a> 或对应的插件说明。</p>
+<h2><span id="总结">总结</span></h2><p>Hexo 命令行工具是博客开发与维护的核心，掌握本文梳理的命令可覆盖从环境搭建到部署的全流程需求。建议根据实际使用场景，将常用命令（如一键部署、本地预览）设置别名，结合插件扩展功能，进一步提升效率。若需深入了解某一命令或插件，可参考 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">Hexo 官方文档</a> 或对应的插件说明。</p>
 
     </div>
     
@@ -434,7 +448,6 @@ alias hgd=&quot;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&quot;  # 一键�
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>

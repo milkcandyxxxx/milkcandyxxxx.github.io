@@ -191,13 +191,27 @@
             
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
+        
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：195 | 阅读时长：1 分钟
+        </span>
+        
     </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
     
     <div class="content" v-pre>
         <p>Reversingx64Elf100 c if ( (unsigned int)sub_4006FD(s) ) 需要走一遍sub_4006FD函数 函数内容 c __int64 __fastcall sub_4006FD(__int64 a1) { int i; &#x2F;&#x2F; [rsp+14h] [rbp24h] _QWORD v3[4]; &#x2F;&#x2F; [rsp+18h]…</p>
 <span id="more"></span>
 
-<h1><span id="reversing-x64elf-100">Reversing-x64Elf-100</span><a href="#reversing-x64elf-100" class="header-anchor">#</a></h1><p><img src="D:\Programme\Code\python\Reverse\攻防世界\Reversing-x64Elf-100\Reversing-x64Elf-100.assets\image-20251119160638848.png" alt="image-20251119160638848"></p>
+<h1><span id="reversing-x64elf-100">Reversing-x64Elf-100</span></h1><p><img src="D:\Programme\Code\python\Reverse\攻防世界\Reversing-x64Elf-100\Reversing-x64Elf-100.assets\image-20251119160638848.png" alt="image-20251119160638848"></p>
 <pre><code class="c">  if ( (unsigned int)sub_4006FD(s) )
 </code></pre>
 <p>需要走一遍sub_4006FD函数</p>
@@ -244,7 +258,6 @@ if __name__ == &quot;__main__&quot;:
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>

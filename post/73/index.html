@@ -184,14 +184,28 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #03a9f4">
                     未标记
                 </a>
             </span>
             
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
+        
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：66 | 阅读时长：1 分钟
+        </span>
+        
     </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
     
     <div class="content" v-pre>
         <p>张牙舞爪的人，往往是很脆弱的。因为真正强大的人，是自信的，自信就会温和，温和就会坚定。<br>————《明朝那些事儿》<br>正是因为脆弱本身，才需要利用“张牙舞爪”来伪装自己吧。</p>
@@ -205,7 +219,6 @@
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>

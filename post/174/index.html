@@ -191,7 +191,21 @@
             
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
+        
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：317 | 阅读时长：1 分钟
+        </span>
+        
     </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
     
     <div class="content" v-pre>
         <p>[collapse title”第一题”] java public class Ex4_1 { String str; public Ex4_1(String str) { this.str str; } int getlength() { return str.length(); } public static void main(String[] arg…</p>
@@ -265,7 +279,6 @@ public class Ex4_2 {
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>

@@ -184,21 +184,35 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ff7d73">
                     未标记
                 </a>
             </span>
             
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
+        
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：2.8k | 阅读时长：11 分钟
+        </span>
+        
     </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
     
     <div class="content" v-pre>
         <p>[notice]注！：使用时请放在“jieko”包内，并将文件名设置为“jieko”[&#x2F;notice] 版本更迭查看最新版等请到奶糖的github查看<a target="_blank" rel="noopener" href="https://github.com/milkcandyxx/java-">奶糖的库</a> 粗略版 [collapse title”粗略版（点击打开）”] java package jieko; import java.util.Scanner;&#x2F;&#x2F;引用Scanner类用于输入 &#x2F;…</p>
 <span id="more"></span>
 
 <p>[notice]注！：使用时请放在“jieko”包内，并将文件名设置为“jieko”[&#x2F;notice]<br>版本更迭查看最新版等请到奶糖的github查看<a target="_blank" rel="noopener" href="https://github.com/milkcandyxx/java-">奶糖的库</a></p>
-<h2><span id="粗略版">粗略版</span><a href="#粗略版" class="header-anchor">#</a></h2><p>[collapse title&#x3D;”粗略版（点击打开）”]</p>
+<h2><span id="粗略版">粗略版</span></h2><p>[collapse title&#x3D;”粗略版（点击打开）”]</p>
 <pre><code class="java">package jieko;
 import java.util.Scanner;//引用Scanner类用于输入
 /*接口类似与抽象类，
@@ -276,7 +290,7 @@ public class jieko {
 }
 </code></pre>
 <p>[&#x2F;collapse]</p>
-<h2><span id="详解版">详解版</span><a href="#详解版" class="header-anchor">#</a></h2><p>[collapse title&#x3D;”详解版（点击打开）”]</p>
+<h2><span id="详解版">详解版</span></h2><p>[collapse title&#x3D;”详解版（点击打开）”]</p>
 <pre><code class="java">package jieko; // 定义包名为 jieko
 
 import java.util.Scanner; // 导入 Scanner 类，用于从控制台获取用户输入
@@ -389,7 +403,7 @@ public class jieko {
 }
 </code></pre>
 <p>[&#x2F;collapse]</p>
-<h2><span id="中文演示版">中文演示版</span><a href="#中文演示版" class="header-anchor">#</a></h2><p>[collapse title&#x3D;”中文演示版（点击打开）”]</p>
+<h2><span id="中文演示版">中文演示版</span></h2><p>[collapse title&#x3D;”中文演示版（点击打开）”]</p>
 <pre><code class="java">package 接口示例; // 定义包名为 接口示例
 
 import java.util.Scanner; // 导入 Scanner 类，用于从控制台获取用户输入
@@ -512,7 +526,6 @@ public class 接口演示 {
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>

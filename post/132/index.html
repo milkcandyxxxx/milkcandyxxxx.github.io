@@ -191,22 +191,36 @@
             
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
+        
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：617 | 阅读时长：2 分钟
+        </span>
+        
     </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
     
     <div class="content" v-pre>
         <p>前言 在奶糖申请大佬<a target="_blank" rel="noopener" href="https://www.dmxvx.cc/">Mello的赛博本子</a>的友链时遇到了些问题——ssl证书未部署。 由于奶糖也是迷迷糊糊的就申请了，所以很多事没考虑（笨） ssl证书 1. 保护网站信息 加入ssl证书后就相当于是为网站内的信息进行加密，更安全的进行传输。 我们在域名前所看到的http以及https，其中https就是经过加密的网站，也就更安全。 2. 验证域名真…</p>
 <span id="more"></span>
 
-<h2><span id="前言">前言</span><a href="#前言" class="header-anchor">#</a></h2><p>在奶糖申请大佬<a target="_blank" rel="noopener" href="https://www.dmxvx.cc/">Mello的赛博本子</a>的友链时遇到了些问题——ssl证书未部署。<br>由于奶糖也是迷迷糊糊的就申请了，所以很多事没考虑（笨）</p>
-<h2><span id="ssl证书">ssl证书</span><a href="#ssl证书" class="header-anchor">#</a></h2><ol>
+<h2><span id="前言">前言</span></h2><p>在奶糖申请大佬<a target="_blank" rel="noopener" href="https://www.dmxvx.cc/">Mello的赛博本子</a>的友链时遇到了些问题——ssl证书未部署。<br>由于奶糖也是迷迷糊糊的就申请了，所以很多事没考虑（笨）</p>
+<h2><span id="ssl证书">ssl证书</span></h2><ol>
 <li>保护网站信息<br>加入ssl证书后就相当于是为网站内的信息进行加密，更安全的进行传输。<br>我们在域名前所看到的http以及https，其中https就是经过加密的网站，也就更安全。</li>
 <li>验证域名真实性<br>部分虚假网站，冒充正版网站，而ssl证书就可以相当于一个验证工具，判断所浏览的网站是否为正牌。当浏览器提示如下图所示就需要注意啦。<br><img src="https://s2.loli.net/2024/01/10/uRkbEUMQ8A6a1iY.jpg" alt="提示"><br>其实…这个就是奶糖博客的另一个域名，只不过ssl证书没有搞上去（懒）</li>
 <li>更易传播<br>像一开始奶糖并未部署ssl所以大佬提示奶糖先去部署一下（为了安全考虑）<br>百度等搜索引擎收录也需要ssl证书</li>
 </ol>
-<h2><span id="如何部署">如何部署</span><a href="#如何部署" class="header-anchor">#</a></h2><p>在购入域名的地方一般都有配套的ssl证书可供选择（但是收费）<br>其余的像又拍云，cloudflare可以提供一定时间的证书<br>具体部署过程因平台而异（大体都要验证域名所有权）</p>
-<h2><span id="备案">备案</span><a href="#备案" class="header-anchor">#</a></h2><p>备案与ssl证书不同，备案是向工信部提交认证（实名认证，法人信息等）相当于为网站做了担保，也是在国内网站所必须做的。备<br>不过…奶糖还未成年QwQ不能备案</p>
-<h2><span id="备案后的好处">备案后的好处</span><a href="#备案后的好处" class="header-anchor">#</a></h2><p>可向百度等搜索引擎收录（可在浏览器中被搜索到），奶糖目前还不想QwQ<br>可申请cdn加速（后续会提及）</p>
-<h2><span id="总结">总结</span><a href="#总结" class="header-anchor">#</a></h2><p>ssl证书和备案都是为了加强网站的安性，同时也意味着要对网站做出绝对的负责了。</p>
+<h2><span id="如何部署">如何部署</span></h2><p>在购入域名的地方一般都有配套的ssl证书可供选择（但是收费）<br>其余的像又拍云，cloudflare可以提供一定时间的证书<br>具体部署过程因平台而异（大体都要验证域名所有权）</p>
+<h2><span id="备案">备案</span></h2><p>备案与ssl证书不同，备案是向工信部提交认证（实名认证，法人信息等）相当于为网站做了担保，也是在国内网站所必须做的。备<br>不过…奶糖还未成年QwQ不能备案</p>
+<h2><span id="备案后的好处">备案后的好处</span></h2><p>可向百度等搜索引擎收录（可在浏览器中被搜索到），奶糖目前还不想QwQ<br>可申请cdn加速（后续会提及）</p>
+<h2><span id="总结">总结</span></h2><p>ssl证书和备案都是为了加强网站的安性，同时也意味着要对网站做出绝对的负责了。</p>
 
     </div>
     
@@ -217,7 +231,6 @@
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>

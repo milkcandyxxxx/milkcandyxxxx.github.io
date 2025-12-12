@@ -3,7 +3,7 @@
 <html lang="ch">
 <head>
     <meta charset="utf-8" />
-    <title>Categories: 生活琐碎 | 奶糖の小窝</title>
+    <title>编程字体推荐 | 奶糖の小窝</title>
     <meta name="author" content="milkcandy" />
     <meta name="description" content="拾枝杂谈" />
     <meta name="keywords" content="milkcnandy" />
@@ -37,6 +37,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -150,14 +154,20 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div class="article">
+    <div>
+        <h1>编程字体推荐</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/12/12
+        </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/" style="background: #00bcd4">
+        <span class="category">
+            <a href="/categories/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -166,127 +176,49 @@
         </span>
         
         
-        
-        <span>
-            <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未分类
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E4%BB%A3%E7%A0%81/" style="color: #ff7d73">
+                    代码
+                </a>
+            </span>
+            
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
         
-        
-        <span>
-            <a href="/categories/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                拾枝杂谈
-            </a>
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：22 | 阅读时长：1 分钟
         </span>
         
-        
-        
-        <span>
-            <a href="/categories/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/%E6%9C%AA%E6%9D%A5%E4%B8%8E%E6%A2%A6/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                未来与梦
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%B8%B8%E6%88%8F%E4%BA%BA%E7%94%9F/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏人生
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E7%94%9F%E6%B4%BB%E7%90%90%E7%A2%8E/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                生活琐碎
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%8B%BE%E6%9E%9D%E6%9D%82%E8%B0%88/%E6%B8%B8%E6%88%8F%E4%BA%BA%E7%94%9F/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏人生
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%97%A7%E7%97%85%E5%A4%8D%E5%8F%91/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                旧病复发
-            </a>
-        </span>
-        
-        
+    </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
+    
+    <div class="content" v-pre>
+        <h1><span id="maple-font">Maple-font</span></h1><p>一开始一直用的是<a target="_blank" rel="noopener" href="https://www.jetbrains.com/lp/mono/">jetbrains mono</a>，就是jetbrains自家的字体，也不错</p>
+
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/22</div>
-            <a href="/post/96/">
-                <h3>江南的雪</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E7%94%9F%E6%B4%BB%E7%90%90%E7%A2%8E/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        生活琐碎
-                    </a>
-                </span>
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">
-                            未标记
-                        </a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
+    
+    
+    
+    
+    
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -315,6 +247,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>

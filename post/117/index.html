@@ -184,14 +184,28 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #ffa2c4">
                     未标记
                 </a>
             </span>
             
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
+        
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：93 | 阅读时长：1 分钟
+        </span>
+        
     </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
     
     <div class="content" v-pre>
         <p>你对我的百般注解和识读，并不构成万分之一的我，却是一览无遗的你。<br>– 三毛</p>
@@ -207,7 +221,6 @@
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>

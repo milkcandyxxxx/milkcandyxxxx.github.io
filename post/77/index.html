@@ -184,21 +184,35 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00bcd4">
+                <a href="/tags/%E6%9C%AA%E6%A0%87%E8%AE%B0/" style="color: #00a596">
                     未标记
                 </a>
             </span>
             
         </span>
         
+
+        <!-- 【关键修改1：将字数统计移到.info内，改为span标签（取消块级换行）】 -->
+        
+        <span class="post-meta-wordcount">
+            <span class="icon">
+                <i class="fa-solid fa-file-word fa-fw"></i> <!-- 可选：添加字数图标，和其他元素统一 -->
+            </span>
+            
+            字数：1.1k | 阅读时长：4 分钟
+        </span>
+        
     </div>
+
+    <!-- 【删除原有的独立div块，避免换行】 -->
+
     
     <div class="content" v-pre>
         <p>前言 第一周的学习成果（其实也就一天，因为书刚到(+_+)?） 明白了html和css的用处 html的基本书写方法 css的部分书写 html 与其说是语言，倒不如说是一种标记 html负责告诉浏览器如何显示内容，显示什么内容（有点像写作文时的格式） html welcome to milkcandy body { backgroundcolor :4fb…</p>
 <span id="more"></span>
 
-<h2><span id="前言"><strong>前言</strong></span><a href="#前言" class="header-anchor">#</a></h2><p>第一周的学习成果（其实也就一天，因为书刚到(+_+)?）<br>明白了html和css的用处<br>html的基本书写方法<br>css的部分书写</p>
-<h2><span id="html">html</span><a href="#html" class="header-anchor">#</a></h2><p>与其说是语言，倒不如说是一种标记<br>html负责告诉浏览器如何显示内容，显示什么内容（有点像写作文时的格式）</p>
+<h2><span id="前言"><strong>前言</strong></span></h2><p>第一周的学习成果（其实也就一天，因为书刚到(+_+)?）<br>明白了html和css的用处<br>html的基本书写方法<br>css的部分书写</p>
+<h2><span id="html">html</span></h2><p>与其说是语言，倒不如说是一种标记<br>html负责告诉浏览器如何显示内容，显示什么内容（有点像写作文时的格式）</p>
 <pre><code class="html">&lt;html&gt; &lt;!--文章的开始--&gt;
     &lt;head&gt;&lt;!--页面的头部标题开始--&gt;
         &lt;title&gt;welcome to milkcandy&lt;/title&gt;&lt;!--页面的头部标题--&gt;
@@ -254,9 +268,9 @@
     img引用图片--&gt;
 </code></pre>
 <p>这里就是奶糖整理的部分代码的含义</p>
-<h2><span id="css">css</span><a href="#css" class="header-anchor">#</a></h2><p>与html不太，css是用来美化我们的网页的上文中的body { background-color :#4fb8c8}，就是指将页面背景颜色改为#4fb8c8（淡蓝）。<br>奶糖对于css还没咋学习，所以就到这啦。</p>
-<h2><span id="其他">其他</span><a href="#其他" class="header-anchor">#</a></h2><p>再往后就是一些嵌套，路径等问题，总的来说就是要细心，还有在早些时候就做好内容的整理<br>最后一点就是对于web的部分讲解，大都是理论部分：域名，FTP,URL,HTTP等<br>域名：用于定位网站就是我的<a target="_blank" rel="noopener" href="http://www.milkcandy.shop/">www.milkcandy.shop</a><br>FTP:网络协议，这里了解是为了上传自己的网页到云服务器<br><em>cd:跳转到指定目录&#x2F;put：上传&#x2F;mkdir：新建目录&#x2F;get：获取文件</em><br>HTTP:超文本传输协议（HyperText Transfer Protocol）,一种简单的请求和响应协议<br>绝对路径：..&#x2F;<del>&#x2F;</del>,类似如此部属最少的，从一个文件到另一个<br>默认页面：像网页发送请求后默认响应的文件<br>URL:资源地址，奶糖博客中的图片均是填写的url，打开时候再访问。</p>
-<h2><span id="总结">总结</span><a href="#总结" class="header-anchor">#</a></h2><p>算是了结了大体的html和css，会初步的写一些静态页面，以及如何上传到云服务器中（＞人＜；）</p>
+<h2><span id="css">css</span></h2><p>与html不太，css是用来美化我们的网页的上文中的body { background-color :#4fb8c8}，就是指将页面背景颜色改为#4fb8c8（淡蓝）。<br>奶糖对于css还没咋学习，所以就到这啦。</p>
+<h2><span id="其他">其他</span></h2><p>再往后就是一些嵌套，路径等问题，总的来说就是要细心，还有在早些时候就做好内容的整理<br>最后一点就是对于web的部分讲解，大都是理论部分：域名，FTP,URL,HTTP等<br>域名：用于定位网站就是我的<a target="_blank" rel="noopener" href="http://www.milkcandy.shop/">www.milkcandy.shop</a><br>FTP:网络协议，这里了解是为了上传自己的网页到云服务器<br><em>cd:跳转到指定目录&#x2F;put：上传&#x2F;mkdir：新建目录&#x2F;get：获取文件</em><br>HTTP:超文本传输协议（HyperText Transfer Protocol）,一种简单的请求和响应协议<br>绝对路径：..&#x2F;<del>&#x2F;</del>,类似如此部属最少的，从一个文件到另一个<br>默认页面：像网页发送请求后默认响应的文件<br>URL:资源地址，奶糖博客中的图片均是填写的url，打开时候再访问。</p>
+<h2><span id="总结">总结</span></h2><p>算是了结了大体的html和css，会初步的写一些静态页面，以及如何上传到云服务器中（＞人＜；）</p>
 
     </div>
     
@@ -267,7 +281,6 @@
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>
