@@ -2417,4 +2417,35 @@ if __name__ == &quot;__main__&quot;:
         <tag>代码</tag>
       </tags>
   </entry>
+  <entry>
+    <title>buu-reverse1-1</title>
+    <url>/2025/12/24/buu-reverse1-1/</url>
+    <content><![CDATA[<pre><code class="python">flag = [
+    &#39;66&#39;, &#39;0A&#39;, &#39;6B&#39;, &#39;0C&#39;, &#39;77&#39;, &#39;26&#39;, &#39;4F&#39;, &#39;2E&#39;, &#39;40&#39;, &#39;11&#39;, &#39;78&#39;, &#39;0D&#39;, &#39;5A&#39;, &#39;3B&#39;, &#39;55&#39;, &#39;11&#39;, &#39;70&#39;, &#39;19&#39;, &#39;46&#39;,
+    &#39;1F&#39;, &#39;76&#39;, &#39;22&#39;, &#39;4D&#39;, &#39;23&#39;, &#39;44&#39;, &#39;0E&#39;, &#39;67&#39;, &#39;06&#39;, &#39;68&#39;, &#39;0F&#39;, &#39;47&#39;, &#39;32&#39;, &#39;4F&#39;,
+]
+#
+for i in range(len(flag)):
+    flag[i] = int(flag[i],16)
+# C语言以&#39;00&#39;结尾，但是strncmp不对比\0，所以这里也不需要
+# print(flag[::-1])
+# print(&quot;\n&quot;)
+# print(flag[::1])
+print(len(flag))
+# flag[i] = flag[i] ^ flag[i-1]
+for i in range(len(flag)-1,0,-1):
+    flag[i] = flag[i] ^ flag[i - 1]
+# 异或a^1^1=a
+
+for i in range(len(flag)):
+    print(chr(flag[i]),end=&quot;&quot;)
+</code></pre>
+]]></content>
+      <categories>
+        <category>未来与梦</category>
+      </categories>
+      <tags>
+        <tag>Re</tag>
+      </tags>
+  </entry>
 </search>
